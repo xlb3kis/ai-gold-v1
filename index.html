@@ -2,35 +2,29 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>AI GOLD V1.3</title>
+<title>AI GOLD V1.4</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
-}
+*{box-sizing:border-box}
 
 body{
     margin:0;
-    background:#070d1b;
+    background:#07101f;
     color:#fff;
-    font-family:-apple-system,BlinkMacSystemFont,
-    "Segoe UI",Roboto,Arial,sans-serif;
+    font-family:Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 .container{
-    width:100%;
     max-width:900px;
     margin:auto;
-    padding:20px 16px 60px;
+    padding:20px 14px 50px;
 }
 
 .header{
     text-align:center;
-    padding:20px 0 28px;
+    padding:15px 0 25px;
 }
 
 .logo{
@@ -38,69 +32,69 @@ body{
 }
 
 .title{
-    font-size:36px;
+    font-size:34px;
     font-weight:900;
-    margin-top:4px;
 }
 
 .subtitle{
     color:#8994aa;
-    font-size:15px;
-    margin-top:7px;
+    margin-top:6px;
 }
 
 .card{
-    background:#141d36;
-    border-radius:24px;
-    padding:22px;
-    margin-bottom:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.18);
+    background:#141e36;
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:16px;
 }
 
 .price-title{
     text-align:center;
-    color:#9aa4ba;
-    font-size:16px;
+    color:#98a3b9;
 }
 
 .price{
     text-align:center;
-    font-size:58px;
+    font-size:56px;
     font-weight:900;
-    margin:14px 0 4px;
-    letter-spacing:-2px;
+    margin:12px 0;
 }
 
 .price-change{
     text-align:center;
-    color:#a7b0c4;
-    font-size:16px;
+    color:#aab4c8;
 }
 
 .update{
     text-align:center;
-    color:#707b94;
-    margin-top:10px;
-    font-size:13px;
+    color:#6f7a91;
+    font-size:12px;
+    margin-top:8px;
 }
 
 .badge{
-    display:inline-block;
+    display:block;
+    width:max-content;
+    margin:12px auto 0;
     padding:6px 12px;
-    border-radius:999px;
+    border-radius:20px;
     font-size:12px;
-    font-weight:800;
-    margin-top:12px;
+    font-weight:bold;
 }
 
-.badge.real{
-    background:#103d2b;
+.real{
+    background:#123d2b;
     color:#35d58a;
 }
 
-.badge.demo{
+.demo{
     background:#443816;
     color:#f2c94c;
+}
+
+.error{
+    background:#451b24;
+    color:#ff6978;
 }
 
 .signal-card{
@@ -108,34 +102,32 @@ body{
 }
 
 .signal-title{
-    color:#9ca6bb;
-    font-size:17px;
+    color:#9da7bb;
 }
 
 .signal{
     font-size:46px;
     font-weight:900;
-    margin:17px 0;
+    margin:14px 0;
 }
 
-.signal.buy{
+.buy{
     color:#35d58a;
 }
 
-.signal.sell{
+.sell{
     color:#ff5d6c;
 }
 
-.signal.wait{
-    color:#b9c0d0;
+.wait{
+    color:#c0c7d5;
 }
 
 .score{
     height:14px;
-    background:#28324d;
+    background:#28334d;
     border-radius:20px;
     overflow:hidden;
-    margin:14px 0;
 }
 
 .score-bar{
@@ -147,25 +139,24 @@ body{
         #f2c94c,
         #35d58a
     );
-    transition:.4s;
 }
 
 .score-text{
-    font-size:15px;
-    color:#aeb7ca;
+    color:#aab4c8;
+    margin-top:10px;
 }
 
 .section-title{
     font-size:20px;
     font-weight:900;
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .row{
     display:flex;
     justify-content:space-between;
-    padding:13px 0;
-    border-bottom:1px solid #28324a;
+    padding:12px 0;
+    border-bottom:1px solid #29344d;
 }
 
 .row:last-child{
@@ -173,11 +164,11 @@ body{
 }
 
 .label{
-    color:#9aa4ba;
+    color:#98a3b9;
 }
 
 .value{
-    font-weight:800;
+    font-weight:bold;
 }
 
 .green{
@@ -192,51 +183,50 @@ body{
     color:#f2c94c;
 }
 
-.trade-grid{
+.grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
 }
 
-.trade-box{
-    background:#0d1428;
-    padding:16px;
-    border-radius:16px;
+.box{
+    background:#0c1427;
+    padding:15px;
+    border-radius:15px;
 }
 
-.trade-label{
-    color:#8e99ae;
+.box-label{
+    color:#8c97ad;
     font-size:13px;
 }
 
-.trade-value{
+.box-value{
     font-size:20px;
     font-weight:900;
     margin-top:7px;
 }
 
-input,
-select{
+input{
     width:100%;
-    background:#0b1224;
-    border:1px solid #303b58;
-    color:#fff;
-    border-radius:13px;
     padding:13px;
-    margin-top:7px;
+    background:#0b1325;
+    border:1px solid #34405d;
+    border-radius:12px;
+    color:#fff;
     outline:none;
+    margin-top:7px;
 }
 
 button{
     width:100%;
-    border:none;
-    border-radius:15px;
+    border:0;
     padding:15px;
-    font-size:17px;
-    font-weight:900;
-    background:#26314e;
-    color:#fff;
     margin-top:12px;
+    border-radius:14px;
+    background:#293653;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
 }
 
 button:active{
@@ -245,44 +235,33 @@ button:active{
 
 .status{
     text-align:center;
-    color:#8f99ad;
+    color:#8d98ae;
     font-size:13px;
-    margin-top:13px;
+    margin-top:12px;
     line-height:1.6;
 }
 
-.warning{
+.info{
     color:#f2c94c;
     line-height:1.7;
     font-size:13px;
 }
 
-.small{
-    color:#7f8aa1;
-    font-size:12px;
-    line-height:1.6;
-    margin-top:8px;
-}
-
 .footer{
     text-align:center;
-    color:#59647b;
+    color:#59647a;
     font-size:11px;
-    margin-top:25px;
+    margin-top:20px;
 }
 
 @media(max-width:500px){
 
-    .container{
-        padding:16px 12px 45px;
+    .price{
+        font-size:45px;
     }
 
     .title{
         font-size:30px;
-    }
-
-    .price{
-        font-size:46px;
     }
 
     .signal{
@@ -290,8 +269,7 @@ button:active{
     }
 
     .card{
-        padding:18px;
-        border-radius:20px;
+        padding:17px;
     }
 }
 </style>
@@ -301,297 +279,271 @@ button:active{
 
 <div class="container">
 
-    <div class="header">
-        <div class="logo">🤖</div>
-        <div class="title">AI GOLD</div>
-        <div class="subtitle">
-            V1.3 · XAUUSD · GOLD SIGNAL ENGINE
+<div class="header">
+    <div class="logo">🤖</div>
+    <div class="title">AI GOLD</div>
+    <div class="subtitle">
+        V1.4 · XAUUSD · GOLD SIGNAL ENGINE
+    </div>
+</div>
+
+
+<!-- PRICE -->
+
+<div class="card">
+
+    <div class="price-title">
+        XAU/USD 黄金现货参考价格
+    </div>
+
+    <div class="price" id="price">
+        ----
+    </div>
+
+    <div class="price-change" id="change">
+        等待行情
+    </div>
+
+    <div class="update" id="update">
+        尚未更新
+    </div>
+
+    <span id="mode"
+          class="badge real">
+        REAL
+    </span>
+
+</div>
+
+
+<!-- SIGNAL -->
+
+<div class="card signal-card">
+
+    <div class="signal-title">
+        AI 综合评分
+    </div>
+
+    <div id="signal"
+         class="signal wait">
+        WAIT
+    </div>
+
+    <div class="score">
+        <div id="scoreBar"
+             class="score-bar">
         </div>
     </div>
 
-
-    <!-- PRICE -->
-
-    <div class="card">
-
-        <div class="price-title">
-            XAU/USD 黄金现货参考价格
-        </div>
-
-        <div class="price" id="price">
-            ----
-        </div>
-
-        <div class="price-change" id="change">
-            等待行情
-        </div>
-
-        <div class="update" id="update">
-            尚未更新
-        </div>
-
-        <div style="text-align:center;">
-            <span id="modeBadge"
-                  class="badge real">
-                REAL
-            </span>
-        </div>
-
+    <div id="scoreText"
+         class="score-text">
+        等待行情数据
     </div>
 
+</div>
 
-    <!-- SIGNAL -->
 
-    <div class="card signal-card">
+<!-- TECHNICAL -->
 
-        <div class="signal-title">
-            AI 综合评分
-        </div>
+<div class="card">
 
-        <div class="signal wait" id="signal">
-            WAIT
-        </div>
+    <div class="section-title">
+        📊 技术分析
+    </div>
 
-        <div class="score">
-            <div class="score-bar"
-                 id="scoreBar">
+    <div class="row">
+        <span class="label">当前价格</span>
+        <span class="value" id="techPrice">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">EMA 20</span>
+        <span class="value" id="ema20">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">EMA 50</span>
+        <span class="value" id="ema50">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">RSI 14</span>
+        <span class="value" id="rsi">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">MACD</span>
+        <span class="value" id="macd">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">ATR</span>
+        <span class="value" id="atr">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">Momentum</span>
+        <span class="value" id="momentum">--</span>
+    </div>
+
+    <div class="row">
+        <span class="label">趋势</span>
+        <span class="value" id="trend">
+            等待数据
+        </span>
+    </div>
+
+</div>
+
+
+<!-- TRADE -->
+
+<div class="card">
+
+    <div class="section-title">
+        🎯 AI 交易计划
+    </div>
+
+    <div class="grid">
+
+        <div class="box">
+            <div class="box-label">方向</div>
+            <div class="box-value"
+                 id="direction">
+                WAIT
             </div>
         </div>
 
-        <div class="score-text"
-             id="scoreText">
-            正在等待行情
+        <div class="box">
+            <div class="box-label">Entry</div>
+            <div class="box-value"
+                 id="entry">
+                --
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">SL</div>
+            <div class="box-value"
+                 id="sl">
+                --
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">TP1</div>
+            <div class="box-value"
+                 id="tp1">
+                --
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">TP2</div>
+            <div class="box-value"
+                 id="tp2">
+                --
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-label">Risk / Reward</div>
+            <div class="box-value"
+                 id="rr">
+                --
+            </div>
         </div>
 
     </div>
 
+</div>
 
-    <!-- TECHNICAL -->
 
-    <div class="card">
+<!-- SETTINGS -->
 
-        <div class="section-title">
-            📊 技术分析
-        </div>
+<div class="card">
 
-        <div class="row">
-            <span class="label">当前价格</span>
-            <span class="value" id="techPrice">--</span>
-        </div>
+    <div class="section-title">
+        ⚙️ 行情设置
+    </div>
 
-        <div class="row">
-            <span class="label">EMA 20</span>
-            <span class="value" id="ema20">--</span>
-        </div>
+    <div class="label">
+        Gold API
+    </div>
 
-        <div class="row">
-            <span class="label">EMA 50</span>
-            <span class="value" id="ema50">--</span>
-        </div>
+    <input
+        id="api"
+        value="https://api.gold-api.com/price/XAU"
+    >
 
-        <div class="row">
-            <span class="label">RSI 14</span>
-            <span class="value" id="rsi">--</span>
-        </div>
+    <button onclick="refreshPrice()">
+        🔄 立即刷新行情
+    </button>
 
-        <div class="row">
-            <span class="label">MACD</span>
-            <span class="value" id="macd">--</span>
-        </div>
+    <button onclick="demo()">
+        🧪 测试 AI
+    </button>
 
-        <div class="row">
-            <span class="label">ATR</span>
-            <span class="value" id="atr">--</span>
-        </div>
+    <button onclick="clearData()">
+        🗑️ 清除历史
+    </button>
 
-        <div class="row">
-            <span class="label">Momentum</span>
-            <span class="value" id="momentum">--</span>
-        </div>
+    <div id="status"
+         class="status">
+        系统启动中...
+    </div>
 
-        <div class="row">
-            <span class="label">趋势</span>
-            <span class="value" id="trend">
-                等待数据
-            </span>
-        </div>
+</div>
+
+
+<!-- INFO -->
+
+<div class="card">
+
+    <div class="section-title">
+        ⚠️ 说明
+    </div>
+
+    <div class="info">
+
+        BUY / SELL 是技术分析信号，
+        不是保证盈利的交易指令。
+
+        <br><br>
+
+        当前版本不会自动执行 MT5 真实订单。
+
+        <br><br>
+
+        XAUUSD 实际交易价格请以你的经纪商报价为准。
 
     </div>
 
-
-    <!-- TRADE PLAN -->
-
-    <div class="card">
-
-        <div class="section-title">
-            🎯 AI 交易计划
-        </div>
-
-        <div class="trade-grid">
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    方向
-                </div>
-
-                <div class="trade-value"
-                     id="tradeDirection">
-                    WAIT
-                </div>
-            </div>
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    入场
-                </div>
-
-                <div class="trade-value"
-                     id="entry">
-                    --
-                </div>
-            </div>
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    止损 SL
-                </div>
-
-                <div class="trade-value"
-                     id="sl">
-                    --
-                </div>
-            </div>
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    止盈 TP1
-                </div>
-
-                <div class="trade-value"
-                     id="tp1">
-                    --
-                </div>
-            </div>
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    止盈 TP2
-                </div>
-
-                <div class="trade-value"
-                     id="tp2">
-                    --
-                </div>
-            </div>
-
-            <div class="trade-box">
-                <div class="trade-label">
-                    风险收益
-                </div>
-
-                <div class="trade-value"
-                     id="rr">
-                    --
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- SETTINGS -->
-
-    <div class="card">
-
-        <div class="section-title">
-            ⚙️ 行情设置
-        </div>
-
-        <label class="label">
-            API Endpoint
-        </label>
-
-        <input
-            id="apiEndpoint"
-            value="https://api.gold-api.com/price/XAU"
-        >
-
-        <div class="small">
-            当前使用 Gold API XAU 实时价格。
-            本版本会自动保存价格历史到浏览器。
-        </div>
-
-        <button onclick="manualRefresh()">
-            🔄 立即刷新行情
-        </button>
-
-        <button onclick="loadDemoData()">
-            🧪 测试 AI 指标
-        </button>
-
-        <button onclick="clearHistory()">
-            🗑️ 清除历史数据
-        </button>
-
-        <div class="status"
-             id="status">
-            系统启动中...
-        </div>
-
-    </div>
-
-
-    <!-- WARNING -->
-
-    <div class="card">
-
-        <div class="section-title">
-            ⚠️ 系统说明
-        </div>
-
-        <div class="warning">
-
-            BUY / SELL 是技术分析信号，
-            不是保证盈利的交易指令。
-
-            <br><br>
-
-            本系统目前不会自动连接 MT5，
-            也不会自动执行真实订单。
-
-            <br><br>
-
-            XAU/USD 数据属于行情参考数据，
-            下单前请以你的经纪商 MT5 实际报价为准。
-
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-        AI GOLD V1.3 · XAUUSD · SIGNAL ENGINE
-    </div>
+<div class="footer">
+    AI GOLD V1.4 · XAUUSD
+</div>
 
 </div>
 
 
 <script>
 
-/* =========================================================
-   AI GOLD V1.3
-   ========================================================= */
+/* =====================================================
+   CONFIG
+===================================================== */
 
 const CONFIG = {
 
-    refreshMs: 5000,
+    interval: 5000,
 
-    historyLength: 300,
+    maxHistory: 300,
 
     minHistory: 50,
 
-    storageKey: "ai_gold_v13_prices",
+    storage: "AI_GOLD_V14_HISTORY",
 
     atrPeriod: 14,
 
@@ -599,349 +551,322 @@ const CONFIG = {
 
     tp1ATR: 1.5,
 
-    tp2ATR: 3.0
+    tp2ATR: 3
 
 };
 
 
-/* =========================================================
-   GLOBAL
-   ========================================================= */
+/* =====================================================
+   STATE
+===================================================== */
 
 let prices = [];
 
-let currentPrice = null;
+let current = null;
 
-let previousPrice = null;
+let previous = null;
 
 let demoMode = false;
 
 
-/* =========================================================
-   ELEMENT HELPER
-   ========================================================= */
+/* =====================================================
+   DOM
+===================================================== */
 
 const $ = id =>
     document.getElementById(id);
 
 
-/* =========================================================
+/* =====================================================
    FORMAT
-   ========================================================= */
+===================================================== */
 
-function fmt(value, digits = 2){
+function fmt(value,digits=2){
 
-    if(
-        value === null ||
-        value === undefined ||
-        !Number.isFinite(Number(value))
-    ){
+    const n = Number(value);
+
+    if(!Number.isFinite(n)){
         return "--";
     }
 
-    return Number(value).toFixed(digits);
+    return n.toFixed(digits);
+
 }
 
 
-/* =========================================================
-   EMA
-   ========================================================= */
+/* =====================================================
+   SAVE
+===================================================== */
 
-function EMA(data, period){
+function save(){
+
+    try{
+
+        localStorage.setItem(
+            CONFIG.storage,
+            JSON.stringify(prices)
+        );
+
+    }catch(e){
+
+        console.log(e);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD
+===================================================== */
+
+function load(){
+
+    try{
+
+        const data =
+            localStorage.getItem(
+                CONFIG.storage
+            );
+
+        if(!data){
+            return;
+        }
+
+        const arr =
+            JSON.parse(data);
+
+        if(Array.isArray(arr)){
+
+            prices =
+                arr
+                .map(Number)
+                .filter(
+                    n => Number.isFinite(n)
+                )
+                .slice(
+                    -CONFIG.maxHistory
+                );
+
+        }
+
+    }catch(e){
+
+        prices = [];
+
+    }
+
+}
+
+
+/* =====================================================
+   EMA
+===================================================== */
+
+function EMA(data,period){
 
     if(data.length < period){
         return null;
     }
 
-    const k = 2 / (period + 1);
+    const k =
+        2 / (period + 1);
 
     let ema =
         data
-        .slice(0, period)
-        .reduce((a,b) => a + b, 0)
-        / period;
+        .slice(0,period)
+        .reduce(
+            (a,b)=>a+b,
+            0
+        ) / period;
 
     for(
-        let i = period;
-        i < data.length;
+        let i=period;
+        i<data.length;
         i++
     ){
 
         ema =
             data[i] * k +
-            ema * (1 - k);
+            ema * (1-k);
 
     }
 
     return ema;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    RSI
-   ========================================================= */
+===================================================== */
 
-function RSI(data, period = 14){
+function RSI(data,period=14){
 
-    if(data.length < period + 1){
+    if(data.length < period+1){
         return null;
     }
 
-    let gains = 0;
-
-    let losses = 0;
+    let gain=0;
+    let loss=0;
 
     for(
-        let i = 1;
-        i <= period;
+        let i=1;
+        i<=period;
         i++
     ){
 
-        const change =
-            data[i] - data[i - 1];
+        const d =
+            data[i]-data[i-1];
 
-        if(change >= 0){
-            gains += change;
-        }
-        else{
-            losses += Math.abs(change);
+        if(d>0){
+            gain += d;
+        }else{
+            loss += Math.abs(d);
         }
 
     }
 
     let avgGain =
-        gains / period;
+        gain/period;
 
     let avgLoss =
-        losses / period;
+        loss/period;
 
     for(
-        let i = period + 1;
-        i < data.length;
+        let i=period+1;
+        i<data.length;
         i++
     ){
 
-        const change =
-            data[i] - data[i - 1];
+        const d =
+            data[i]-data[i-1];
 
-        const gain =
-            change > 0 ? change : 0;
+        const g =
+            d>0 ? d : 0;
 
-        const loss =
-            change < 0
-                ? Math.abs(change)
-                : 0;
+        const l =
+            d<0 ? Math.abs(d) : 0;
 
         avgGain =
             (
-                avgGain * (period - 1)
-                + gain
-            ) / period;
+                avgGain*(period-1)+g
+            )/period;
 
         avgLoss =
             (
-                avgLoss * (period - 1)
-                + loss
-            ) / period;
+                avgLoss*(period-1)+l
+            )/period;
 
     }
 
-    if(avgLoss === 0){
+    if(avgLoss===0){
         return 100;
     }
 
     const rs =
-        avgGain / avgLoss;
+        avgGain/avgLoss;
 
     return 100 -
-        100 / (1 + rs);
+        100/(1+rs);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MACD
-   ========================================================= */
+===================================================== */
 
 function MACD(data){
 
-    if(data.length < 35){
-        return null;
-    }
-
-    const ema12 =
+    const fast =
         EMA(data,12);
 
-    const ema26 =
+    const slow =
         EMA(data,26);
 
     if(
-        ema12 === null ||
-        ema26 === null
+        fast===null ||
+        slow===null
     ){
         return null;
     }
 
-    return ema12 - ema26;
+    return fast-slow;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MOMENTUM
-   ========================================================= */
+===================================================== */
 
-function momentum(data){
+function Momentum(data){
 
-    if(data.length < 6){
+    if(data.length<6){
         return null;
     }
 
     return (
-        data[data.length - 1] -
-        data[data.length - 6]
+        data[data.length-1] -
+        data[data.length-6]
     );
+
 }
 
 
-/* =========================================================
-   ATR-LIKE
-   ========================================================= */
+/* =====================================================
+   ATR
+===================================================== */
 
-function ATR(data, period = 14){
+function ATR(data,period=14){
 
-    if(data.length < period + 1){
+    if(data.length<period+1){
         return null;
     }
 
-    const ranges = [];
+    const values=[];
 
     for(
-        let i = 1;
-        i < data.length;
+        let i=1;
+        i<data.length;
         i++
     ){
 
-        ranges.push(
+        values.push(
             Math.abs(
-                data[i] - data[i - 1]
+                data[i]-data[i-1]
             )
         );
 
     }
 
     const recent =
-        ranges.slice(-period);
+        values.slice(-period);
 
-    if(recent.length < period){
-        return null;
-    }
-
-    return (
-        recent.reduce(
-            (a,b) => a + b,
-            0
-        ) / period
-    );
-}
-
-
-/* =========================================================
-   LOAD STORAGE
-   ========================================================= */
-
-function loadHistory(){
-
-    try{
-
-        const saved =
-            localStorage.getItem(
-                CONFIG.storageKey
-            );
-
-        if(!saved){
-            return;
-        }
-
-        const parsed =
-            JSON.parse(saved);
-
-        if(Array.isArray(parsed)){
-
-            prices =
-                parsed
-                .map(Number)
-                .filter(
-                    Number.isFinite
-                )
-                .slice(
-                    -CONFIG.historyLength
-                );
-
-        }
-
-    }
-    catch(error){
-
-        console.error(
-            "History load error",
-            error
-        );
-
-    }
+    return recent.reduce(
+        (a,b)=>a+b,
+        0
+    ) / recent.length;
 
 }
 
 
-/* =========================================================
-   SAVE STORAGE
-   ========================================================= */
+/* =====================================================
+   PARSE PRICE
+===================================================== */
 
-function saveHistory(){
+function parsePrice(data){
 
-    try{
-
-        localStorage.setItem(
-            CONFIG.storageKey,
-            JSON.stringify(
-                prices.slice(
-                    -CONFIG.historyLength
-                )
-            )
-        );
-
-    }
-    catch(error){
-
-        console.error(
-            "History save error",
-            error
-        );
-
+    if(
+        typeof data === "number"
+    ){
+        return data;
     }
 
-}
-
-
-/* =========================================================
-   PARSE API
-   ========================================================= */
-
-function parseMarketData(data){
-
-    if(data === null ||
-       data === undefined){
-
-        return null;
-    }
-
-
-    if(typeof data === "number"){
-
-        return Number(data);
-
-    }
-
-
-    if(typeof data === "string"){
+    if(
+        typeof data === "string"
+    ){
 
         const n =
             Number(data);
@@ -952,131 +877,109 @@ function parseMarketData(data){
 
     }
 
+    if(!data){
+        return null;
+    }
 
-    const candidates = [
+    const fields = [
 
         data.price,
-
         data.ask,
-
         data.bid,
-
-        data.XAUUSD,
-
-        data.xauusd,
-
-        data.gold,
-
-        data.value,
-
         data.last,
-
-        data.close
+        data.close,
+        data.value
 
     ];
 
-
-    for(const value of candidates){
+    for(
+        const value of fields
+    ){
 
         const n =
             Number(value);
 
-        if(Number.isFinite(n) &&
-           n > 0){
-
+        if(
+            Number.isFinite(n) &&
+            n>0
+        ){
             return n;
-
         }
 
     }
-
 
     return null;
 
 }
 
 
-/* =========================================================
-   UPDATE PRICE
-   ========================================================= */
+/* =====================================================
+   ADD PRICE
+===================================================== */
 
-function updatePrice(price){
+function addPrice(price){
 
-    price =
+    const n =
         Number(price);
 
-
     if(
-        !Number.isFinite(price) ||
-        price <= 0
+        !Number.isFinite(n) ||
+        n<=0
     ){
-
         throw new Error(
-            "无效价格"
+            "Invalid price"
         );
-
     }
 
+    previous = current;
 
-    previousPrice =
-        currentPrice;
+    current = n;
 
-    currentPrice =
-        price;
-
-
-    prices.push(price);
-
+    prices.push(n);
 
     if(
         prices.length >
-        CONFIG.historyLength
+        CONFIG.maxHistory
     ){
 
         prices.shift();
 
     }
 
-
-    saveHistory();
-
+    save();
 
     $("price").textContent =
-        fmt(price);
+        fmt(n);
 
     $("techPrice").textContent =
-        fmt(price);
+        fmt(n);
 
 
-    if(previousPrice !== null){
+    if(previous!==null){
 
         const diff =
-            price - previousPrice;
+            n-previous;
 
         const pct =
-            previousPrice !== 0
-                ? diff /
-                  previousPrice *
-                  100
-                : 0;
-
+            diff/
+            previous*
+            100;
 
         $("change").textContent =
             (
-                diff >= 0
+                diff>=0
                     ? "↑ "
                     : "↓ "
-            ) +
-            fmt(diff) +
-            " (" +
-            fmt(pct,3) +
+            )+
+            fmt(diff)+
+            " ("+
+            fmt(pct,3)+
             "%)";
 
-
         $("change").className =
-            "price-change " +
+            "price-change "+
             (
-                diff >= 0
+                diff>=0
                     ? "green"
                     : "red"
             );
@@ -1085,7 +988,7 @@ function updatePrice(price){
 
 
     $("update").textContent =
-        "更新：" +
+        "最后更新："+
         new Date()
         .toLocaleTimeString();
 
@@ -1095,13 +998,13 @@ function updatePrice(price){
 }
 
 
-/* =========================================================
+/* =====================================================
    ANALYZE
-   ========================================================= */
+===================================================== */
 
 function analyze(){
 
-    if(prices.length < CONFIG.minHistory){
+    if(prices.length<CONFIG.minHistory){
 
         $("signal").textContent =
             "WAIT";
@@ -1109,13 +1012,16 @@ function analyze(){
         $("signal").className =
             "signal wait";
 
+        $("direction").textContent =
+            "WAIT";
+
         $("scoreBar").style.width =
             "50%";
 
         $("scoreText").textContent =
-            "数据积累中：" +
-            prices.length +
-            " / " +
+            "数据积累中："+
+            prices.length+
+            " / "+
             CONFIG.minHistory;
 
         $("status").textContent =
@@ -1127,7 +1033,7 @@ function analyze(){
 
 
     const price =
-        prices[prices.length - 1];
+        prices[prices.length-1];
 
 
     const ema20 =
@@ -1143,22 +1049,19 @@ function analyze(){
         MACD(prices);
 
     const mom =
-        momentum(prices);
+        Momentum(prices);
 
     const atr =
-        ATR(
-            prices,
-            CONFIG.atrPeriod
-        );
+        ATR(prices,14);
 
 
     if(
-        ema20 === null ||
-        ema50 === null ||
-        rsi === null ||
-        macd === null ||
-        mom === null ||
-        atr === null
+        ema20===null ||
+        ema50===null ||
+        rsi===null ||
+        macd===null ||
+        mom===null ||
+        atr===null
     ){
 
         return;
@@ -1178,68 +1081,52 @@ function analyze(){
     $("macd").textContent =
         fmt(macd,3);
 
-    $("atr").textContent =
-        fmt(atr,2);
-
     $("momentum").textContent =
         fmt(mom,2);
 
-
-    /* =====================================================
-       SCORE
-       ===================================================== */
-
-    let score = 50;
+    $("atr").textContent =
+        fmt(atr,2);
 
 
-    /* PRICE vs EMA20 */
+    /* SCORE */
 
-    if(price > ema20){
-        score += 10;
-    }
-    else{
-        score -= 10;
+    let score=50;
+
+
+    if(price>ema20){
+        score+=10;
+    }else{
+        score-=10;
     }
 
 
-    /* EMA20 vs EMA50 */
-
-    if(ema20 > ema50){
-        score += 15;
-    }
-    else{
-        score -= 15;
+    if(ema20>ema50){
+        score+=15;
+    }else{
+        score-=15;
     }
 
 
-    /* RSI */
-
-    if(rsi >= 55 && rsi <= 70){
-        score += 10;
+    if(rsi>=55 && rsi<=70){
+        score+=10;
     }
 
-    else if(rsi >= 30 && rsi < 45){
-        score -= 10;
-    }
-
-
-    /* MACD */
-
-    if(macd > 0){
-        score += 10;
-    }
-    else{
-        score -= 10;
+    if(rsi>=30 && rsi<=45){
+        score-=10;
     }
 
 
-    /* MOMENTUM */
-
-    if(mom > 0){
-        score += 5;
+    if(macd>0){
+        score+=10;
+    }else{
+        score-=10;
     }
-    else{
-        score -= 5;
+
+
+    if(mom>0){
+        score+=5;
+    }else{
+        score-=5;
     }
 
 
@@ -1254,32 +1141,30 @@ function analyze(){
 
 
     $("scoreBar").style.width =
-        score + "%";
+        score+"%";
 
 
     $("scoreText").textContent =
-        "多头 " +
-        score +
-        "% · 空头 " +
-        (100 - score) +
+        "多头 "+
+        score+
+        "% · 空头 "+
+        (100-score)+
         "%";
 
 
-    /* =====================================================
-       SIGNAL
-       ===================================================== */
+    /* SIGNAL */
 
-    let signal = "WAIT";
+    let signal="WAIT";
 
 
-    if(score >= 70){
+    if(score>=70){
 
-        signal = "BUY";
+        signal="BUY";
 
     }
-    else if(score <= 30){
+    else if(score<=30){
 
-        signal = "SELL";
+        signal="SELL";
 
     }
 
@@ -1288,35 +1173,51 @@ function analyze(){
         signal;
 
     $("signal").className =
-        "signal " +
+        "signal "+
         signal.toLowerCase();
 
-    $("tradeDirection").textContent =
+    $("direction").textContent =
         signal;
 
 
-    /* =====================================================
-       TREND
-       ===================================================== */
+    if(signal==="BUY"){
 
-    let trend = "震荡";
+        $("direction").className =
+            "box-value green";
 
+    }
+    else if(signal==="SELL"){
 
-    if(
-        price > ema20 &&
-        ema20 > ema50
-    ){
+        $("direction").className =
+            "box-value red";
 
-        trend = "多头";
+    }
+    else{
+
+        $("direction").className =
+            "box-value";
 
     }
 
-    else if(
-        price < ema20 &&
-        ema20 < ema50
+
+    /* TREND */
+
+    let trend="震荡";
+
+    if(
+        price>ema20 &&
+        ema20>ema50
     ){
 
-        trend = "空头";
+        trend="多头";
+
+    }
+    else if(
+        price<ema20 &&
+        ema20<ema50
+    ){
+
+        trend="空头";
 
     }
 
@@ -1324,51 +1225,74 @@ function analyze(){
     $("trend").textContent =
         trend;
 
-
     $("trend").className =
-        "value " +
+        "value "+
         (
-            trend === "多头"
+            trend==="多头"
                 ? "green"
-                : trend === "空头"
+                : trend==="空头"
                     ? "red"
                     : "yellow"
         );
 
 
-    /* =====================================================
-       TRADE PLAN
-       ===================================================== */
+    /* TRADE */
 
-    if(signal === "BUY"){
+    if(
+        signal==="BUY" ||
+        signal==="SELL"
+    ){
 
         const risk =
             Math.max(
-                atr * CONFIG.slATR,
-                1
+                atr*CONFIG.slATR,
+                0.5
             );
+
 
         const tp1 =
             Math.max(
-                atr * CONFIG.tp1ATR,
+                atr*CONFIG.tp1ATR,
                 risk
             );
 
+
         const tp2 =
             Math.max(
-                atr * CONFIG.tp2ATR,
-                risk * 2
+                atr*CONFIG.tp2ATR,
+                risk*2
             );
 
 
-        const sl =
-            price - risk;
+        let sl;
+        let target1;
+        let target2;
 
-        const target1 =
-            price + tp1;
 
-        const target2 =
-            price + tp2;
+        if(signal==="BUY"){
+
+            sl =
+                price-risk;
+
+            target1 =
+                price+tp1;
+
+            target2 =
+                price+tp2;
+
+        }
+        else{
+
+            sl =
+                price+risk;
+
+            target1 =
+                price-tp1;
+
+            target2 =
+                price-tp2;
+
+        }
 
 
         $("entry").textContent =
@@ -1384,76 +1308,10 @@ function analyze(){
             fmt(target2);
 
         $("rr").textContent =
-            "1 : " +
-            fmt(
-                tp2 / risk,
-                1
-            );
-
-
-        $("tradeDirection").className =
-            "trade-value green";
+            "1 : "+
+            fmt(tp2/risk,1);
 
     }
-
-
-    else if(signal === "SELL"){
-
-        const risk =
-            Math.max(
-                atr * CONFIG.slATR,
-                1
-            );
-
-        const tp1 =
-            Math.max(
-                atr * CONFIG.tp1ATR,
-                risk
-            );
-
-        const tp2 =
-            Math.max(
-                atr * CONFIG.tp2ATR,
-                risk * 2
-            );
-
-
-        const sl =
-            price + risk;
-
-        const target1 =
-            price - tp1;
-
-        const target2 =
-            price - tp2;
-
-
-        $("entry").textContent =
-            fmt(price);
-
-        $("sl").textContent =
-            fmt(sl);
-
-        $("tp1").textContent =
-            fmt(target1);
-
-        $("tp2").textContent =
-            fmt(target2);
-
-        $("rr").textContent =
-            "1 : " +
-            fmt(
-                tp2 / risk,
-                1
-            );
-
-
-        $("tradeDirection").className =
-            "trade-value red";
-
-    }
-
-
     else{
 
         $("entry").textContent =
@@ -1471,87 +1329,71 @@ function analyze(){
         $("rr").textContent =
             "--";
 
-        $("tradeDirection").className =
-            "trade-value";
-
     }
 
 
     if(!demoMode){
 
         $("status").textContent =
-            "🟢 REAL 行情 · " +
-            prices.length +
-            " 个历史价格";
+            "🟢 REAL · "+
+            prices.length+
+            " 个价格数据";
 
     }
 
 }
 
 
-/* =========================================================
-   FETCH LIVE PRICE
-   ========================================================= */
+/* =====================================================
+   REAL API
+===================================================== */
 
-async function fetchLivePrice(){
+async function refreshPrice(){
 
-    if(demoMode){
+    demoMode=false;
+
+    $("mode").textContent =
+        "REAL";
+
+    $("mode").className =
+        "badge real";
+
+
+    const url =
+        $("api").value.trim();
+
+
+    if(!url){
+
+        showError(
+            "API 地址为空"
+        );
+
         return;
+
     }
 
 
-    const endpoint =
-        $("apiEndpoint")
-        .value
-        .trim();
-
-
-    if(!endpoint){
-
-        $("status").textContent =
-            "🔴 请设置 API Endpoint";
-
-        return;
-
-    }
+    $("status").textContent =
+        "连接 Gold API...";
 
 
     try{
 
-        $("status").textContent =
-            "连接行情服务器...";
-
-
-        const controller =
-            new AbortController();
-
-
-        const timeout =
-            setTimeout(
-                () => controller.abort(),
-                8000
-            );
-
-
         const response =
             await fetch(
-                endpoint,
+                url,
                 {
                     method:"GET",
-                    cache:"no-store",
-                    signal:
-                        controller.signal
+                    cache:"no-store"
                 }
             );
-
-
-        clearTimeout(timeout);
 
 
         if(!response.ok){
 
             throw new Error(
-                "HTTP " +
+                "HTTP "+
                 response.status
             );
 
@@ -1562,36 +1404,26 @@ async function fetchLivePrice(){
             await response.json();
 
 
+        console.log(
+            "Gold API response:",
+            data
+        );
+
+
         const price =
-            parseMarketData(data);
+            parsePrice(data);
 
 
-        if(
-            price === null ||
-            !Number.isFinite(price)
-        ){
+        if(price===null){
 
             throw new Error(
-                "无法解析 API 价格"
+                "API 返回没有 price 字段"
             );
 
         }
 
 
-        updatePrice(price);
-
-
-        $("modeBadge").textContent =
-            "REAL";
-
-        $("modeBadge").className =
-            "badge real";
-
-
-        $("status").textContent =
-            "🟢 REAL 行情连接正常 · " +
-            prices.length +
-            " 个数据";
+        addPrice(price);
 
 
     }
@@ -1599,115 +1431,112 @@ async function fetchLivePrice(){
 
         console.error(error);
 
-
-        $("status").textContent =
-            "🔴 行情失败：" +
-            error.message;
+        showError(
+            error.message
+        );
 
     }
 
 }
 
 
-/* =========================================================
+/* =====================================================
+   ERROR
+===================================================== */
+
+function showError(message){
+
+    $("mode").textContent =
+        "ERROR";
+
+    $("mode").className =
+        "badge error";
+
+    $("status").textContent =
+        "🔴 行情错误："+message;
+
+}
+
+
+/* =====================================================
    DEMO
-   ========================================================= */
+===================================================== */
 
-function loadDemoData(){
+function demo(){
 
-    demoMode = true;
+    demoMode=true;
 
-    prices = [];
+    $("mode").textContent =
+        "DEMO";
 
-    let price = 4388.80;
+    $("mode").className =
+        "badge demo";
+
+
+    prices=[];
+
+    let price=4380;
 
 
     for(
-        let i = 0;
-        i < 150;
+        let i=0;
+        i<120;
         i++
     ){
 
-        const trend =
-            i * 0.12;
-
-        const wave =
-            Math.sin(i / 6) * 2;
-
-        const random =
-            (Math.random() - .5)
-            * 1.2;
-
-
         price +=
-            0.05 +
-            trend / 100 +
-            wave * .08 +
-            random;
-
+            0.08+
+            Math.sin(i/5)*0.3+
+            (Math.random()-0.5)*0.7;
 
         prices.push(price);
 
     }
 
 
-    currentPrice =
-        prices[
-            prices.length - 1
-        ];
+    current =
+        prices[prices.length-1];
 
-    previousPrice =
-        prices[
-            prices.length - 2
-        ];
+    previous =
+        prices[prices.length-2];
 
 
-    $("modeBadge").textContent =
-        "DEMO";
+    $("price").textContent =
+        fmt(current);
 
-    $("modeBadge").className =
-        "badge demo";
-
+    $("techPrice").textContent =
+        fmt(current);
 
     $("change").textContent =
-        "🧪 DEMO 数据";
-
+        "🧪 DEMO 测试数据";
 
     $("update").textContent =
         "测试模式";
 
 
-    $("price").textContent =
-        fmt(currentPrice);
-
-
-    $("techPrice").textContent =
-        fmt(currentPrice);
+    analyze();
 
 
     $("status").textContent =
-        "🟡 DEMO 模式：测试指标，不是真实行情";
-
-
-    analyze();
+        "🟡 DEMO 模式：指标测试成功";
 
 }
 
 
-/* =========================================================
-   CLEAR HISTORY
-   ========================================================= */
+/* =====================================================
+   CLEAR
+===================================================== */
 
-function clearHistory(){
+function clearData(){
 
-    prices = [];
+    prices=[];
 
-    currentPrice = null;
+    current=null;
 
-    previousPrice = null;
+    previous=null;
 
     localStorage.removeItem(
-        CONFIG.storageKey
+        CONFIG.storage
     );
 
 
@@ -1723,82 +1552,68 @@ function clearHistory(){
     $("signal").className =
         "signal wait";
 
+    $("direction").textContent =
+        "WAIT";
+
     $("scoreBar").style.width =
         "50%";
 
     $("scoreText").textContent =
         "历史数据已清除";
 
-
     $("status").textContent =
-        "🟡 历史数据已清除，等待新行情";
+        "历史数据已清除";
 
 }
 
 
-/* =========================================================
-   MANUAL
-   ========================================================= */
-
-function manualRefresh(){
-
-    demoMode = false;
-
-    fetchLivePrice();
-
-}
-
-
-/* =========================================================
+/* =====================================================
    START
-   ========================================================= */
+===================================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+function start(){
 
-        loadHistory();
+    load();
 
 
-        if(prices.length > 0){
+    if(prices.length>0){
 
-            currentPrice =
-                prices[
-                    prices.length - 1
-                ];
+        current =
+            prices[prices.length-1];
 
-            previousPrice =
-                prices[
-                    prices.length - 2
-                ] || null;
+        previous =
+            prices[prices.length-2] ||
+            null;
 
 
-            $("price").textContent =
-                fmt(currentPrice);
+        $("price").textContent =
+            fmt(current);
 
-            $("techPrice").textContent =
-                fmt(currentPrice);
-
-
-            analyze();
-
-        }
+        $("techPrice").textContent =
+            fmt(current);
 
 
-        $("status").textContent =
-            "🟢 AI GOLD V1.3 启动";
-
-
-        fetchLivePrice();
-
-
-        setInterval(
-            fetchLivePrice,
-            CONFIG.refreshMs
-        );
+        analyze();
 
     }
-);
+
+
+    $("status").textContent =
+        "🟢 V1.4 已启动";
+
+
+    refreshPrice();
+
+
+    setInterval(
+        refreshPrice,
+        CONFIG.interval
+    );
+
+}
+
+
+start();
 
 </script>
 
