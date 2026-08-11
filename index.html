@@ -2,605 +2,393 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI GOLD V1.4</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI GOLD V1.5</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box}
 body{
     margin:0;
     background:#070d1b;
     color:#fff;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
 }
-
 .container{
     width:100%;
-    max-width:900px;
+    max-width:920px;
     margin:auto;
-    padding:20px 14px 50px;
+    padding:18px 13px 50px
 }
-
-.header{
-    text-align:center;
-    padding:10px 0 25px;
-}
-
-.logo{
-    font-size:48px;
-}
-
-.title{
-    font-size:36px;
-    font-weight:900;
-    margin-top:5px;
-}
-
-.subtitle{
-    color:#8995ad;
-    font-size:14px;
-    margin-top:7px;
-}
-
+.header{text-align:center;padding:8px 0 24px}
+.logo{font-size:46px}
+.title{font-size:34px;font-weight:900}
+.subtitle{color:#8995ad;font-size:13px;margin-top:6px}
 .card{
     background:#141d36;
-    border-radius:23px;
-    padding:20px;
-    margin-bottom:17px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
+    border-radius:21px;
+    padding:19px;
+    margin-bottom:15px;
+    box-shadow:0 7px 24px rgba(0,0,0,.18)
 }
-
-.price-title{
-    text-align:center;
-    color:#9da8bd;
-    font-size:16px;
-}
-
+.price-title{text-align:center;color:#9da8bd}
 .price{
     text-align:center;
-    font-size:56px;
+    font-size:53px;
     font-weight:900;
-    letter-spacing:-2px;
-    margin:12px 0;
+    margin:10px 0
 }
-
-.change{
-    text-align:center;
-    font-size:15px;
-}
-
-.update{
-    text-align:center;
-    color:#6f7b94;
-    font-size:12px;
-    margin-top:9px;
-}
-
+.change{text-align:center;font-size:14px}
+.update{text-align:center;color:#6d7890;font-size:11px;margin-top:7px}
 .badge{
     display:block;
     width:max-content;
-    margin:12px auto 0;
-    padding:6px 14px;
+    margin:11px auto 0;
+    padding:5px 13px;
     border-radius:30px;
-    font-size:12px;
-    font-weight:900;
+    font-size:11px;
+    font-weight:900
 }
+.real{background:#0d412d;color:#35dc8c}
+.demo{background:#453916;color:#f3ca4d}
+.error{background:#471c27;color:#ff6979}
 
-.badge-real{
-    background:#0d412d;
-    color:#35dc8c;
-}
-
-.badge-demo{
-    background:#453916;
-    color:#f3ca4e;
-}
-
-.badge-error{
-    background:#471c27;
-    color:#ff6979;
-}
-
-.signal-card{
-    text-align:center;
-}
-
-.signal-title{
-    color:#a0aabe;
-    font-size:16px;
-}
-
+.signal-card{text-align:center}
+.signal-title{color:#a0aabe}
 .signal{
-    font-size:46px;
+    font-size:44px;
     font-weight:900;
-    margin:15px 0;
+    margin:13px 0
 }
-
-.signal-buy{
-    color:#35dc8c;
-}
-
-.signal-sell{
-    color:#ff6070;
-}
-
-.signal-wait{
-    color:#c0c7d5;
-}
+.buy{color:#35dc8c}
+.sell{color:#ff6070}
+.wait{color:#c2c9d5}
 
 .score{
-    width:100%;
-    height:14px;
+    height:13px;
     border-radius:20px;
     background:#29334c;
-    overflow:hidden;
+    overflow:hidden
 }
-
 .score-bar{
-    height:100%;
     width:50%;
-    background:
-        linear-gradient(
-            90deg,
-            #ff5f70,
-            #f1c94d,
-            #35dc8c
-        );
-    transition:.4s;
+    height:100%;
+    background:linear-gradient(90deg,#ff5f70,#f1c94d,#35dc8c);
+    transition:.4s
 }
-
-.score-text{
-    color:#aab4c8;
-    font-size:14px;
-    margin-top:10px;
-}
+.score-text{color:#aab4c8;font-size:13px;margin-top:9px}
 
 .section-title{
-    font-size:20px;
+    font-size:19px;
     font-weight:900;
-    margin-bottom:15px;
+    margin-bottom:13px
 }
-
 .row{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    padding:12px 0;
-    border-bottom:1px solid #29344c;
+    padding:11px 0;
+    border-bottom:1px solid #29344c
 }
+.row:last-child{border-bottom:0}
+.label{color:#99a4ba}
+.value{font-weight:800}
 
-.row:last-child{
-    border-bottom:none;
-}
-
-.label{
-    color:#99a4ba;
-}
-
-.value{
-    font-weight:800;
-}
-
-.green{
-    color:#35dc8c;
-}
-
-.red{
-    color:#ff6070;
-}
-
-.yellow{
-    color:#f2ca4d;
-}
+.green{color:#35dc8c}
+.red{color:#ff6070}
+.yellow{color:#f2ca4d}
 
 .grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:12px;
+    gap:11px
 }
-
 .trade-box{
     background:#0c1428;
-    border-radius:15px;
-    padding:15px;
+    border-radius:14px;
+    padding:14px
 }
-
-.trade-label{
-    color:#8995ab;
-    font-size:13px;
-}
-
+.trade-label{color:#8995ab;font-size:12px}
 .trade-value{
-    font-size:20px;
+    font-size:19px;
     font-weight:900;
-    margin-top:7px;
+    margin-top:6px
 }
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:9px
+}
+.stat{
+    background:#0c1428;
+    border-radius:13px;
+    padding:12px 7px;
+    text-align:center
+}
+.stat-number{font-size:22px;font-weight:900}
+.stat-label{font-size:11px;color:#8995ab;margin-top:4px}
+
+.table-wrap{
+    overflow-x:auto;
+    border-radius:12px
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:680px;
+    font-size:12px
+}
+th{
+    color:#8d99af;
+    background:#0c1428;
+    padding:11px 7px;
+    text-align:center
+}
+td{
+    padding:11px 7px;
+    border-bottom:1px solid #29344c;
+    text-align:center
+}
+.open{color:#f2ca4d}
+.win{color:#35dc8c;font-weight:900}
+.loss{color:#ff6070;font-weight:900}
+
+button{
+    width:100%;
+    border:0;
+    border-radius:13px;
+    padding:14px;
+    margin-top:10px;
+    background:#293653;
+    color:#fff;
+    font-size:15px;
+    font-weight:900
+}
+button:hover{background:#344363}
+button:active{transform:scale(.98)}
 
 input{
     width:100%;
     background:#0b1326;
     color:#fff;
     border:1px solid #34405d;
-    border-radius:12px;
-    padding:13px;
+    border-radius:11px;
+    padding:12px;
     outline:none;
-    margin-top:8px;
+    margin-top:7px
 }
-
-button{
-    width:100%;
-    border:0;
-    border-radius:14px;
-    padding:15px;
-    margin-top:12px;
-    background:#293653;
-    color:#fff;
-    font-size:16px;
-    font-weight:900;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#334263;
-}
-
-button:active{
-    transform:scale(.98);
-}
-
 .status{
     text-align:center;
     color:#8e99ae;
-    font-size:13px;
+    font-size:12px;
     line-height:1.6;
-    margin-top:13px;
+    margin-top:12px
 }
-
 .info{
     color:#f2ca4d;
-    font-size:13px;
-    line-height:1.8;
+    font-size:12px;
+    line-height:1.8
 }
-
 .footer{
     text-align:center;
     color:#59647b;
-    font-size:11px;
-    margin-top:20px;
+    font-size:10px;
+    margin-top:18px
+}
+.empty{
+    text-align:center;
+    color:#6f7b91;
+    padding:20px 5px
 }
 
-@media(max-width:500px){
-
-    .container{
-        padding:14px 11px 40px;
-    }
-
-    .title{
-        font-size:30px;
-    }
-
-    .price{
-        font-size:44px;
-    }
-
-    .signal{
-        font-size:40px;
-    }
-
-    .card{
-        padding:17px;
-        border-radius:20px;
-    }
-
+@media(max-width:600px){
+    .price{font-size:43px}
+    .title{font-size:29px}
+    .stats{grid-template-columns:1fr 1fr}
+    .card{padding:16px}
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-
-<!-- HEADER -->
-
 <div class="header">
-
     <div class="logo">🤖</div>
-
-    <div class="title">
-        AI GOLD
-    </div>
-
-    <div class="subtitle">
-        V1.4 · XAUUSD · GOLD SIGNAL ENGINE
-    </div>
-
+    <div class="title">AI GOLD</div>
+    <div class="subtitle">V1.5 · XAUUSD · SIGNAL RECORDER</div>
 </div>
 
 
 <!-- PRICE -->
-
 <div class="card">
+    <div class="price-title">XAU/USD 黄金现货参考价格</div>
 
-    <div class="price-title">
-        XAU/USD 黄金现货参考价格
-    </div>
+    <div id="price" class="price">----</div>
 
-    <div
-        id="price"
-        class="price">
-        ----
-    </div>
+    <div id="change" class="change">等待行情</div>
 
-    <div
-        id="change"
-        class="change">
-        等待行情
-    </div>
+    <div id="update" class="update">尚未更新</div>
 
-    <div
-        id="update"
-        class="update">
-        尚未更新
-    </div>
-
-    <span
-        id="mode"
-        class="badge badge-real">
-        REAL
-    </span>
-
+    <span id="mode" class="badge real">REAL</span>
 </div>
 
 
-<!-- SIGNAL -->
-
+<!-- AI SIGNAL -->
 <div class="card signal-card">
 
-    <div class="signal-title">
-        AI 综合评分
-    </div>
+    <div class="signal-title">AI 综合评分</div>
 
-    <div
-        id="signal"
-        class="signal signal-wait">
-        WAIT
-    </div>
+    <div id="signal" class="signal wait">WAIT</div>
 
     <div class="score">
-
-        <div
-            id="scoreBar"
-            class="score-bar">
-        </div>
-
+        <div id="scoreBar" class="score-bar"></div>
     </div>
 
-    <div
-        id="scoreText"
-        class="score-text">
+    <div id="scoreText" class="score-text">
         等待行情数据
     </div>
-
 </div>
 
 
 <!-- TECHNICAL -->
-
 <div class="card">
 
-    <div class="section-title">
-        📊 技术分析
+    <div class="section-title">📊 技术分析</div>
+
+    <div class="row">
+        <span class="label">当前价格</span>
+        <span id="techPrice" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            当前价格
-        </span>
-
-        <span
-            id="techPrice"
-            class="value">
-            --
-        </span>
+        <span class="label">EMA 20</span>
+        <span id="ema20" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            EMA 20
-        </span>
-
-        <span
-            id="ema20"
-            class="value">
-            --
-        </span>
+        <span class="label">EMA 50</span>
+        <span id="ema50" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            EMA 50
-        </span>
-
-        <span
-            id="ema50"
-            class="value">
-            --
-        </span>
+        <span class="label">RSI 14</span>
+        <span id="rsi" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            RSI 14
-        </span>
-
-        <span
-            id="rsi"
-            class="value">
-            --
-        </span>
+        <span class="label">MACD</span>
+        <span id="macd" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            MACD
-        </span>
-
-        <span
-            id="macd"
-            class="value">
-            --
-        </span>
+        <span class="label">ATR</span>
+        <span id="atr" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            ATR
-        </span>
-
-        <span
-            id="atr"
-            class="value">
-            --
-        </span>
+        <span class="label">Momentum</span>
+        <span id="momentum" class="value">--</span>
     </div>
 
     <div class="row">
-        <span class="label">
-            Momentum
-        </span>
-
-        <span
-            id="momentum"
-            class="value">
-            --
-        </span>
-    </div>
-
-    <div class="row">
-        <span class="label">
-            趋势
-        </span>
-
-        <span
-            id="trend"
-            class="value">
-            等待数据
-        </span>
+        <span class="label">趋势</span>
+        <span id="trend" class="value">等待数据</span>
     </div>
 
 </div>
 
 
 <!-- TRADE PLAN -->
-
 <div class="card">
 
-    <div class="section-title">
-        🎯 AI 交易计划
-    </div>
+    <div class="section-title">🎯 AI 交易计划</div>
 
     <div class="grid">
 
         <div class="trade-box">
-
-            <div class="trade-label">
-                方向
-            </div>
-
-            <div
-                id="direction"
-                class="trade-value">
-                WAIT
-            </div>
-
+            <div class="trade-label">方向</div>
+            <div id="direction" class="trade-value">WAIT</div>
         </div>
 
-
         <div class="trade-box">
-
-            <div class="trade-label">
-                Entry
-            </div>
-
-            <div
-                id="entry"
-                class="trade-value">
-                --
-            </div>
-
+            <div class="trade-label">Entry</div>
+            <div id="entry" class="trade-value">--</div>
         </div>
 
-
         <div class="trade-box">
-
-            <div class="trade-label">
-                Stop Loss
-            </div>
-
-            <div
-                id="sl"
-                class="trade-value">
-                --
-            </div>
-
+            <div class="trade-label">Stop Loss</div>
+            <div id="sl" class="trade-value">--</div>
         </div>
 
-
         <div class="trade-box">
-
-            <div class="trade-label">
-                TP1
-            </div>
-
-            <div
-                id="tp1"
-                class="trade-value">
-                --
-            </div>
-
+            <div class="trade-label">TP1</div>
+            <div id="tp1" class="trade-value">--</div>
         </div>
 
-
         <div class="trade-box">
-
-            <div class="trade-label">
-                TP2
-            </div>
-
-            <div
-                id="tp2"
-                class="trade-value">
-                --
-            </div>
-
+            <div class="trade-label">TP2</div>
+            <div id="tp2" class="trade-value">--</div>
         </div>
 
-
         <div class="trade-box">
+            <div class="trade-label">Risk / Reward</div>
+            <div id="rr" class="trade-value">--</div>
+        </div>
 
-            <div class="trade-label">
-                Risk / Reward
-            </div>
+    </div>
+</div>
 
-            <div
-                id="rr"
-                class="trade-value">
-                --
-            </div>
 
+<!-- PERFORMANCE -->
+<div class="card">
+
+    <div class="section-title">📈 SIGNAL PERFORMANCE</div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <div id="totalSignals" class="stat-number">0</div>
+            <div class="stat-label">总信号</div>
+        </div>
+
+        <div class="stat">
+            <div id="buyCount" class="stat-number green">0</div>
+            <div class="stat-label">BUY</div>
+        </div>
+
+        <div class="stat">
+            <div id="sellCount" class="stat-number red">0</div>
+            <div class="stat-label">SELL</div>
+        </div>
+
+        <div class="stat">
+            <div id="winRate" class="stat-number yellow">--</div>
+            <div class="stat-label">胜率</div>
+        </div>
+
+    </div>
+
+    <div class="stats" style="margin-top:10px">
+
+        <div class="stat">
+            <div id="winCount" class="stat-number green">0</div>
+            <div class="stat-label">WIN</div>
+        </div>
+
+        <div class="stat">
+            <div id="lossCount" class="stat-number red">0</div>
+            <div class="stat-label">LOSS</div>
+        </div>
+
+        <div class="stat">
+            <div id="openCount" class="stat-number yellow">0</div>
+            <div class="stat-label">OPEN</div>
+        </div>
+
+        <div class="stat">
+            <div id="closedCount" class="stat-number">0</div>
+            <div class="stat-label">已结束</div>
         </div>
 
     </div>
@@ -608,17 +396,32 @@ button:active{
 </div>
 
 
-<!-- SETTINGS -->
-
+<!-- HISTORY -->
 <div class="card">
 
-    <div class="section-title">
-        ⚙️ 行情设置
+    <div class="section-title">📋 SIGNAL HISTORY</div>
+
+    <div id="historyContainer">
+
+        <div class="empty">
+            暂时没有交易信号
+        </div>
+
     </div>
 
-    <div class="label">
-        Gold API Endpoint
-    </div>
+    <button onclick="clearSignals()">
+        🗑️ 清除信号历史
+    </button>
+
+</div>
+
+
+<!-- SETTINGS -->
+<div class="card">
+
+    <div class="section-title">⚙️ 行情设置</div>
+
+    <div class="label">Gold API Endpoint</div>
 
     <input
         id="api"
@@ -630,47 +433,45 @@ button:active{
     </button>
 
     <button onclick="runDemo()">
-        🧪 测试 AI
+        🧪 测试 AI + 信号记录
     </button>
 
-    <button onclick="clearHistory()">
-        🗑️ 清除历史数据
+    <button onclick="clearAll()">
+        🗑️ 清除全部数据
     </button>
 
-    <div
-        id="status"
-        class="status">
+    <div id="status" class="status">
         系统启动中...
     </div>
 
 </div>
 
 
-<!-- INFORMATION -->
-
 <div class="card">
 
-    <div class="section-title">
-        ⚠️ 系统说明
-    </div>
+    <div class="section-title">⚠️ 系统说明</div>
 
     <div class="info">
 
-        BUY / SELL 是技术分析信号，
-        不是保证盈利的交易指令。
+        BUY / SELL 是技术分析信号，不保证盈利。
 
         <br><br>
 
-        当前版本不会自动执行 MT5 真实订单。
+        信号记录器会在 BUY / SELL 出现时建立一个 OPEN 记录。
 
         <br><br>
 
-        XAUUSD 实际交易价格请以你的经纪商报价为准。
+        如果之后价格触及 TP1 或 TP2，记录为 WIN。
+
+        如果之后价格触及 SL，记录为 LOSS。
 
         <br><br>
 
-        本系统使用实时价格采样计算技术指标，
-        不等同于真正的 M1 / M5 OHLC K线。
+        当前版本使用每 5 秒价格采样，不等同于真正的 M1 / M5 OHLC K线。
+
+        <br><br>
+
+        本系统不会自动执行真实订单。
 
     </div>
 
@@ -678,15 +479,13 @@ button:active{
 
 
 <div class="footer">
-    AI GOLD V1.4 · XAUUSD · SIGNAL ENGINE
+    AI GOLD V1.5 · SIGNAL RECORDER · XAUUSD
 </div>
-
 
 </div>
 
 
 <script>
-
 
 /* =====================================================
    CONFIG
@@ -694,29 +493,25 @@ button:active{
 
 const CONFIG = {
 
-    refreshMs: 5000,
+    refreshMs:5000,
 
-    maxHistory: 300,
+    maxHistory:300,
 
-    /*
-       不再要求必须 50 个数据。
+    minimumData:20,
 
-       20 个数据以后开始计算，
-       EMA50 会使用当前已有的数据初始化。
-    */
+    atrPeriod:14,
 
-    minimumData: 20,
+    slATR:1.5,
 
-    storageKey:
-        "AI_GOLD_V14_PRICES",
+    tp1ATR:1.5,
 
-    atrPeriod: 14,
+    tp2ATR:3,
 
-    slATR: 1.5,
+    priceStorage:"AI_GOLD_V15_PRICES",
 
-    tp1ATR: 1.5,
+    signalStorage:"AI_GOLD_V15_SIGNALS",
 
-    tp2ATR: 3.0
+    maxSignals:100
 
 };
 
@@ -725,13 +520,17 @@ const CONFIG = {
    STATE
 ===================================================== */
 
-let prices = [];
+let prices=[];
 
-let currentPrice = null;
+let signals=[];
 
-let previousPrice = null;
+let currentPrice=null;
 
-let demoMode = false;
+let previousPrice=null;
+
+let currentSignal="WAIT";
+
+let demoMode=false;
 
 
 /* =====================================================
@@ -739,30 +538,7 @@ let demoMode = false;
 ===================================================== */
 
 function $(id){
-
     return document.getElementById(id);
-
-}
-
-
-/* =====================================================
-   NUMBER
-===================================================== */
-
-function number(value){
-
-    const n = Number(value);
-
-    if(
-        Number.isFinite(n)
-    ){
-
-        return n;
-
-    }
-
-    return null;
-
 }
 
 
@@ -770,76 +546,78 @@ function number(value){
    FORMAT
 ===================================================== */
 
-function fmt(
-    value,
-    digits = 2
-){
+function fmt(value,digits=2){
 
-    const n =
-        Number(value);
+    const n=Number(value);
 
-    if(
-        !Number.isFinite(n)
-    ){
-
+    if(!Number.isFinite(n)){
         return "--";
-
     }
 
     return n.toFixed(digits);
-
 }
 
 
 /* =====================================================
-   STORAGE LOAD
+   LOAD DATA
 ===================================================== */
 
-function loadHistory(){
+function loadData(){
 
     try{
 
-        const saved =
+        const p=
             localStorage.getItem(
-                CONFIG.storageKey
+                CONFIG.priceStorage
             );
 
-        if(!saved){
+        if(p){
 
-            return;
+            const data=JSON.parse(p);
 
+            if(Array.isArray(data)){
+
+                prices=data
+                    .map(Number)
+                    .filter(
+                        n=>Number.isFinite(n)&&n>0
+                    )
+                    .slice(-CONFIG.maxHistory);
+
+            }
         }
 
-        const data =
-            JSON.parse(saved);
+    }catch(e){
 
-        if(
-            Array.isArray(data)
-        ){
-
-            prices =
-                data
-                .map(Number)
-                .filter(
-                    n =>
-                        Number.isFinite(n)
-                        && n > 0
-                )
-                .slice(
-                    -CONFIG.maxHistory
-                );
-
-        }
+        prices=[];
 
     }
-    catch(error){
 
-        console.log(
-            "Storage load error:",
-            error
-        );
 
-        prices = [];
+    try{
+
+        const s=
+            localStorage.getItem(
+                CONFIG.signalStorage
+            );
+
+        if(s){
+
+            const data=JSON.parse(s);
+
+            if(Array.isArray(data)){
+
+                signals=data.slice(
+                    -CONFIG.maxSignals
+                );
+
+            }
+
+        }
+
+    }catch(e){
+
+        signals=[];
 
     }
 
@@ -847,27 +625,26 @@ function loadHistory(){
 
 
 /* =====================================================
-   STORAGE SAVE
+   SAVE
 ===================================================== */
 
-function saveHistory(){
+function saveData(){
 
     try{
 
         localStorage.setItem(
-            CONFIG.storageKey,
-            JSON.stringify(
-                prices
-            )
+            CONFIG.priceStorage,
+            JSON.stringify(prices)
         );
 
-    }
-    catch(error){
-
-        console.log(
-            "Storage save error:",
-            error
+        localStorage.setItem(
+            CONFIG.signalStorage,
+            JSON.stringify(signals)
         );
+
+    }catch(e){
+
+        console.log(e);
 
     }
 
@@ -878,77 +655,48 @@ function saveHistory(){
    EMA
 ===================================================== */
 
-function EMA(
-    data,
-    period
-){
+function EMA(data,period){
 
-    if(
-        data.length === 0
-    ){
-
+    if(!data.length){
         return null;
-
     }
 
+    const actual=Math.min(
+        period,
+        data.length
+    );
 
-    /*
-       如果数据少于 period，
-       使用已有数据初始化，
-       不再让页面永远 WAIT。
-    */
+    const start=data.length-actual;
 
-    const actualPeriod =
-        Math.min(
-            period,
-            data.length
-        );
-
-
-    const start =
-        data.length -
-        actualPeriod;
-
-
-    let ema = 0;
-
+    let ema=0;
 
     for(
-        let i = start;
-        i < data.length;
+        let i=start;
+        i<data.length;
         i++
     ){
 
-        ema += data[i];
+        ema+=data[i];
 
     }
 
+    ema/=actual;
 
-    ema =
-        ema /
-        actualPeriod;
-
-
-    const k =
-        2 /
-        (period + 1);
-
+    const k=2/(period+1);
 
     for(
-        let i = start + 1;
-        i < data.length;
+        let i=start+1;
+        i<data.length;
         i++
     ){
 
-        ema =
-            data[i] * k +
-            ema * (1 - k);
+        ema=
+            data[i]*k+
+            ema*(1-k);
 
     }
-
 
     return ema;
-
 }
 
 
@@ -956,105 +704,60 @@ function EMA(
    RSI
 ===================================================== */
 
-function RSI(
-    data,
-    period = 14
-){
+function RSI(data,period=14){
 
-    if(
-        data.length < 2
-    ){
-
+    if(data.length<2){
         return null;
-
     }
 
+    const actual=Math.min(
+        period,
+        data.length-1
+    );
 
-    const actualPeriod =
-        Math.min(
-            period,
-            data.length - 1
-        );
+    const start=data.length-actual;
 
+    let gain=0;
 
-    let gain = 0;
-
-    let loss = 0;
-
-
-    const start =
-        data.length -
-        actualPeriod;
-
+    let loss=0;
 
     for(
-        let i = start;
-        i < data.length;
+        let i=start;
+        i<data.length;
         i++
     ){
 
-        const change =
-            data[i] -
-            data[i - 1];
+        const change=
+            data[i]-data[i-1];
 
+        if(change>0){
 
-        if(
-            change > 0
-        ){
+            gain+=change;
 
-            gain += change;
+        }else{
 
-        }
-        else{
-
-            loss +=
-                Math.abs(
-                    change
-                );
+            loss+=Math.abs(change);
 
         }
 
     }
 
+    const avgGain=gain/actual;
 
-    const avgGain =
-        gain /
-        actualPeriod;
+    const avgLoss=loss/actual;
 
+    if(avgLoss===0){
 
-    const avgLoss =
-        loss /
-        actualPeriod;
-
-
-    if(
-        avgLoss === 0
-    ){
-
-        if(
-            avgGain === 0
-        ){
-
-            return 50;
-
-        }
-
-        return 100;
+        return avgGain===0
+            ?50
+            :100;
 
     }
 
+    const rs=
+        avgGain/avgLoss;
 
-    const rs =
-        avgGain /
-        avgLoss;
-
-
-    return (
-        100 -
-        100 /
-        (1 + rs)
-    );
-
+    return 100-100/(1+rs);
 }
 
 
@@ -1062,48 +765,24 @@ function RSI(
    MACD
 ===================================================== */
 
-function MACD(
-    data
-){
+function MACD(data){
 
-    if(
-        data.length < 3
-    ){
-
+    if(data.length<3){
         return null;
-
     }
 
+    const fast=EMA(data,12);
 
-    const fast =
-        EMA(
-            data,
-            12
-        );
-
-
-    const slow =
-        EMA(
-            data,
-            26
-        );
-
+    const slow=EMA(data,26);
 
     if(
-        fast === null ||
-        slow === null
+        fast===null||
+        slow===null
     ){
-
         return null;
-
     }
 
-
-    return (
-        fast -
-        slow
-    );
-
+    return fast-slow;
 }
 
 
@@ -1111,36 +790,14 @@ function MACD(
    MOMENTUM
 ===================================================== */
 
-function Momentum(
-    data
-){
+function Momentum(data){
 
-    if(
-        data.length < 6
-    ){
-
+    if(data.length<6){
         return null;
-
     }
 
-
-    const current =
-        data[
-            data.length - 1
-        ];
-
-
-    const old =
-        data[
-            data.length - 6
-        ];
-
-
-    return (
-        current -
-        old
-    );
-
+    return data[data.length-1]-
+           data[data.length-6];
 }
 
 
@@ -1148,144 +805,85 @@ function Momentum(
    ATR
 ===================================================== */
 
-function ATR(
-    data,
-    period = 14
-){
+function ATR(data,period=14){
 
-    if(
-        data.length < 2
-    ){
-
+    if(data.length<2){
         return null;
-
     }
 
-
-    const ranges = [];
-
+    const ranges=[];
 
     for(
-        let i = 1;
-        i < data.length;
+        let i=1;
+        i<data.length;
         i++
     ){
 
         ranges.push(
             Math.abs(
-                data[i] -
-                data[i - 1]
+                data[i]-data[i-1]
             )
         );
 
     }
 
-
-    const count =
-        Math.min(
+    const recent=ranges.slice(
+        -Math.min(
             period,
             ranges.length
-        );
-
-
-    const recent =
-        ranges.slice(
-            -count
-        );
-
-
-    if(
-        recent.length === 0
-    ){
-
-        return null;
-
-    }
-
-
-    return (
-        recent.reduce(
-            (a,b) => a + b,
-            0
-        ) /
-        recent.length
+        )
     );
 
+    if(!recent.length){
+        return null;
+    }
+
+    return recent.reduce(
+        (a,b)=>a+b,
+        0
+    )/recent.length;
 }
 
 
 /* =====================================================
-   API PARSER
+   API PRICE PARSER
 ===================================================== */
 
-function parsePrice(
-    data
-){
+function parsePrice(data){
 
-    if(
-        typeof data ===
-        "number"
-    ){
-
-        return number(data);
-
+    if(typeof data==="number"){
+        return Number(data);
     }
 
-
-    if(
-        typeof data ===
-        "string"
-    ){
-
-        return number(data);
-
+    if(typeof data==="string"){
+        return Number(data);
     }
 
-
-    if(
-        !data ||
-        typeof data !== "object"
-    ){
-
+    if(!data||typeof data!=="object"){
         return null;
-
     }
 
-
-    const possible = [
+    const values=[
 
         data.price,
-
         data.ask,
-
         data.bid,
-
         data.last,
-
         data.close,
-
         data.value,
-
         data.XAUUSD,
-
         data.xauusd,
-
         data.gold
 
     ];
 
+    for(const value of values){
 
-    for(
-        const item of possible
-    ){
-
-        const n =
-            number(item);
-
+        const n=Number(value);
 
         if(
-            n !== null &&
-            n > 0
+            Number.isFinite(n)&&
+            n>0
         ){
 
             return n;
@@ -1294,27 +892,21 @@ function parsePrice(
 
     }
 
-
     return null;
-
 }
 
 
 /* =====================================================
-   UPDATE UI PRICE
+   UPDATE PRICE
 ===================================================== */
 
-function updatePrice(
-    price
-){
+function updatePrice(price){
 
-    const n =
-        number(price);
-
+    price=Number(price);
 
     if(
-        n === null ||
-        n <= 0
+        !Number.isFinite(price)||
+        price<=0
     ){
 
         throw new Error(
@@ -1323,20 +915,14 @@ function updatePrice(
 
     }
 
+    previousPrice=currentPrice;
 
-    previousPrice =
-        currentPrice;
+    currentPrice=price;
 
-
-    currentPrice =
-        n;
-
-
-    prices.push(n);
-
+    prices.push(price);
 
     if(
-        prices.length >
+        prices.length>
         CONFIG.maxHistory
     ){
 
@@ -1344,67 +930,52 @@ function updatePrice(
 
     }
 
+    saveData();
 
-    saveHistory();
+    $("price").textContent=
+        fmt(price);
 
+    $("techPrice").textContent=
+        fmt(price);
 
-    $("price").textContent =
-        fmt(n);
+    if(previousPrice!==null){
 
+        const diff=
+            price-previousPrice;
 
-    $("techPrice").textContent =
-        fmt(n);
+        const pct=
+            previousPrice!==0
+                ?diff/previousPrice*100
+                :0;
 
-
-    if(
-        previousPrice !== null
-    ){
-
-        const diff =
-            n -
-            previousPrice;
-
-
-        const pct =
-            previousPrice !== 0
-                ? (
-                    diff /
-                    previousPrice *
-                    100
-                )
-                : 0;
-
-
-        $("change").textContent =
-            (
-                diff >= 0
-                    ? "↑ "
-                    : "↓ "
-            ) +
-            fmt(diff) +
-            " (" +
-            fmt(pct,3) +
+        $("change").textContent=
+            (diff>=0?"↑ ":"↓ ")+
+            fmt(diff)+
+            " ("+
+            fmt(pct,3)+
             "%)";
 
-
-        $("change").className =
-            "change " +
+        $("change").className=
+            "change "+
             (
-                diff >= 0
-                    ? "green"
-                    : "red"
+                diff>=0
+                    ?"green"
+                    :"red"
             );
 
     }
 
-
-    $("update").textContent =
-        "最后更新：" +
-        new Date()
+    $("update").textContent=
+        "最后更新："+new Date()
         .toLocaleTimeString();
 
-
     analyze();
+
+    checkOpenSignals();
+
+    renderHistory();
+
+    renderStats();
 
 }
 
@@ -1415,105 +986,55 @@ function updatePrice(
 
 function analyze(){
 
-    const count =
-        prices.length;
-
-
-    /*
-       数据不足时，
-       不会显示假信号。
-    */
-
     if(
-        count <
+        prices.length<
         CONFIG.minimumData
     ){
 
-        $("signal").textContent =
-            "WAIT";
+        $("signal").textContent="WAIT";
 
+        $("signal").className=
+            "signal wait";
 
-        $("signal").className =
-            "signal signal-wait";
+        $("direction").textContent="WAIT";
 
+        $("scoreBar").style.width="50%";
 
-        $("direction").textContent =
-            "WAIT";
-
-
-        $("scoreBar").style.width =
-            "50%";
-
-
-        $("scoreText").textContent =
-            "数据积累中：" +
-            count +
-            " / " +
-            CONFIG.minimumData;
-
-
-        $("status").textContent =
-            "正在积累行情数据...";
-
+        $("scoreText").textContent=
+            "数据积累中："+prices.length+
+            " / "+CONFIG.minimumData;
 
         return;
 
     }
 
 
-    const price =
-        prices[
-            prices.length - 1
-        ];
+    const price=
+        prices[prices.length-1];
 
+    const ema20=EMA(prices,20);
 
-    const ema20 =
-        EMA(
-            prices,
-            20
-        );
+    const ema50=EMA(prices,50);
 
+    const rsi=RSI(prices,14);
 
-    const ema50 =
-        EMA(
-            prices,
-            50
-        );
+    const macd=MACD(prices);
 
+    const momentum=Momentum(prices);
 
-    const rsi =
-        RSI(
-            prices,
-            14
-        );
-
-
-    const macd =
-        MACD(
-            prices
-        );
-
-
-    const momentum =
-        Momentum(
-            prices
-        );
-
-
-    const atr =
-        ATR(
-            prices,
-            CONFIG.atrPeriod
-        );
+    const atr=ATR(
+        prices,
+        CONFIG.atrPeriod
+    );
 
 
     if(
-        ema20 === null ||
-        ema50 === null ||
-        rsi === null ||
-        macd === null ||
-        momentum === null ||
-        atr === null
+        ema20===null||
+        ema50===null||
+        rsi===null||
+        macd===null||
+        momentum===null||
+        atr===null
     ){
 
         return;
@@ -1521,449 +1042,288 @@ function analyze(){
     }
 
 
-    /*
-       DISPLAY INDICATORS
-    */
-
-    $("ema20").textContent =
+    $("ema20").textContent=
         fmt(ema20);
 
-
-    $("ema50").textContent =
+    $("ema50").textContent=
         fmt(ema50);
 
+    $("rsi").textContent=
+        fmt(rsi,1);
 
-    $("rsi").textContent =
-        fmt(
-            rsi,
-            1
-        );
+    $("macd").textContent=
+        fmt(macd,3);
 
+    $("atr").textContent=
+        fmt(atr,2);
 
-    $("macd").textContent =
-        fmt(
-            macd,
-            3
-        );
+    $("momentum").textContent=
+        fmt(momentum,2);
 
 
-    $("atr").textContent =
-        fmt(
-            atr,
-            2
-        );
+    /* SCORE */
+
+    let score=50;
 
 
-    $("momentum").textContent =
-        fmt(
-            momentum,
-            2
-        );
-
-
-    /*
-       SCORE
-    */
-
-    let score = 50;
-
-
-    /*
-       PRICE VS EMA20
-    */
-
-    if(
-        price > ema20
-    ){
-
-        score += 10;
-
-    }
-    else{
-
-        score -= 10;
-
+    if(price>ema20){
+        score+=10;
+    }else{
+        score-=10;
     }
 
 
-    /*
-       EMA20 VS EMA50
-    */
-
-    if(
-        ema20 > ema50
-    ){
-
-        score += 15;
-
+    if(ema20>ema50){
+        score+=15;
+    }else{
+        score-=15;
     }
-    else{
-
-        score -= 15;
-
-    }
-
-
-    /*
-       RSI
-    */
-
-    if(
-        rsi >= 55 &&
-        rsi <= 70
-    ){
-
-        score += 10;
-
-    }
-    else if(
-        rsi <= 45 &&
-        rsi >= 30
-    ){
-
-        score -= 10;
-
-    }
-
-
-    /*
-       MACD
-    */
-
-    if(
-        macd > 0
-    ){
-
-        score += 10;
-
-    }
-    else{
-
-        score -= 10;
-
-    }
-
-
-    /*
-       MOMENTUM
-    */
-
-    if(
-        momentum > 0
-    ){
-
-        score += 5;
-
-    }
-    else{
-
-        score -= 5;
-
-    }
-
-
-    score =
-        Math.max(
-            0,
-            Math.min(
-                100,
-                score
-            )
-        );
-
-
-    /*
-       SCORE DISPLAY
-    */
-
-    $("scoreBar").style.width =
-        score + "%";
-
-
-    $("scoreText").textContent =
-        "多头 " +
-        score +
-        "% · 空头 " +
-        (100 - score) +
-        "%";
-
-
-    /*
-       SIGNAL
-    */
-
-    let signal =
-        "WAIT";
 
 
     if(
-        score >= 70
+        rsi>=55&&
+        rsi<=70
     ){
 
-        signal =
-            "BUY";
+        score+=10;
 
-    }
-    else if(
-        score <= 30
+    }else if(
+        rsi<=45&&
+        rsi>=30
     ){
 
-        signal =
-            "SELL";
+        score-=10;
 
     }
 
 
-    $("signal").textContent =
+    if(macd>0){
+        score+=10;
+    }else{
+        score-=10;
+    }
+
+
+    if(momentum>0){
+        score+=5;
+    }else{
+        score-=5;
+    }
+
+
+    score=Math.max(
+        0,
+        Math.min(100,score)
+    );
+
+
+    $("scoreBar").style.width=
+        score+"%";
+
+    $("scoreText").textContent=
+        "多头 "+score+
+        "% · 空头 "+
+        (100-score)+"%";
+
+
+    let signal="WAIT";
+
+
+    if(score>=70){
+
+        signal="BUY";
+
+    }else if(score<=30){
+
+        signal="SELL";
+
+    }
+
+
+    $("signal").textContent=
         signal;
 
 
-    if(
-        signal === "BUY"
-    ){
+    if(signal==="BUY"){
 
-        $("signal").className =
-            "signal signal-buy";
+        $("signal").className=
+            "signal buy";
 
-    }
-    else if(
-        signal === "SELL"
-    ){
+    }else if(signal==="SELL"){
 
-        $("signal").className =
-            "signal signal-sell";
+        $("signal").className=
+            "signal sell";
 
-    }
-    else{
+    }else{
 
-        $("signal").className =
-            "signal signal-wait";
+        $("signal").className=
+            "signal wait";
 
     }
 
 
-    $("direction").textContent =
+    $("direction").textContent=
         signal;
 
 
-    /*
-       DIRECTION COLOR
-    */
+    if(signal==="BUY"){
 
-    if(
-        signal === "BUY"
-    ){
-
-        $("direction").className =
+        $("direction").className=
             "trade-value green";
 
-    }
-    else if(
-        signal === "SELL"
-    ){
+    }else if(signal==="SELL"){
 
-        $("direction").className =
+        $("direction").className=
             "trade-value red";
 
-    }
-    else{
+    }else{
 
-        $("direction").className =
+        $("direction").className=
             "trade-value";
 
     }
 
 
-    /*
-       TREND
-    */
-
-    let trend =
-        "震荡";
+    let trend="震荡";
 
 
     if(
-        price > ema20 &&
-        ema20 > ema50
+        price>ema20&&
+        ema20>ema50
     ){
 
-        trend =
-            "多头";
+        trend="多头";
 
-    }
-    else if(
-        price < ema20 &&
-        ema20 < ema50
+    }else if(
+        price<ema20&&
+        ema20<ema50
     ){
 
-        trend =
-            "空头";
+        trend="空头";
 
     }
 
 
-    $("trend").textContent =
+    $("trend").textContent=
         trend;
 
 
-    if(
-        trend === "多头"
-    ){
-
-        $("trend").className =
-            "value green";
-
-    }
-    else if(
-        trend === "空头"
-    ){
-
-        $("trend").className =
-            "value red";
-
-    }
-    else{
-
-        $("trend").className =
-            "value yellow";
-
-    }
+    $("trend").className=
+        "value "+
+        (
+            trend==="多头"
+                ?"green"
+                :trend==="空头"
+                    ?"red"
+                    :"yellow"
+        );
 
 
-    /*
-       TRADE PLAN
-    */
+    /* TRADE PLAN */
 
     if(
-        signal === "BUY" ||
-        signal === "SELL"
+        signal==="BUY"||
+        signal==="SELL"
     ){
 
-        const risk =
+        const risk=
             Math.max(
-                atr *
-                CONFIG.slATR,
+                atr*CONFIG.slATR,
                 0.5
             );
 
-
-        const tp1Distance =
+        const tp1Distance=
             Math.max(
-                atr *
-                CONFIG.tp1ATR,
+                atr*CONFIG.tp1ATR,
                 risk
             );
 
-
-        const tp2Distance =
+        const tp2Distance=
             Math.max(
-                atr *
-                CONFIG.tp2ATR,
-                risk * 2
+                atr*CONFIG.tp2ATR,
+                risk*2
             );
 
-
-        let sl;
-
-        let tp1;
-
-        let tp2;
+        let sl,tp1,tp2;
 
 
-        if(
-            signal === "BUY"
-        ){
+        if(signal==="BUY"){
 
-            sl =
-                price -
-                risk;
+            sl=price-risk;
 
+            tp1=price+tp1Distance;
 
-            tp1 =
-                price +
-                tp1Distance;
+            tp2=price+tp2Distance;
 
+        }else{
 
-            tp2 =
-                price +
-                tp2Distance;
+            sl=price+risk;
 
-        }
-        else{
+            tp1=price-tp1Distance;
 
-            sl =
-                price +
-                risk;
-
-
-            tp1 =
-                price -
-                tp1Distance;
-
-
-            tp2 =
-                price -
-                tp2Distance;
+            tp2=price-tp2Distance;
 
         }
 
 
-        $("entry").textContent =
+        $("entry").textContent=
             fmt(price);
 
-
-        $("sl").textContent =
+        $("sl").textContent=
             fmt(sl);
 
-
-        $("tp1").textContent =
+        $("tp1").textContent=
             fmt(tp1);
 
-
-        $("tp2").textContent =
+        $("tp2").textContent=
             fmt(tp2);
 
-
-        $("rr").textContent =
-            "1 : " +
+        $("rr").textContent=
+            "1 : "+
             fmt(
-                tp2Distance /
-                risk,
+                tp2Distance/risk,
                 1
             );
 
+
+        /*
+           NEW SIGNAL
+        */
+
+        if(
+            signal!=="WAIT"&&
+            signal!==currentSignal
+        ){
+
+            createSignal(
+                signal,
+                price,
+                sl,
+                tp1,
+                tp2
+            );
+
+        }
+
+    }else{
+
+        $("entry").textContent="--";
+        $("sl").textContent="--";
+        $("tp1").textContent="--";
+        $("tp2").textContent="--";
+        $("rr").textContent="--";
+
     }
-    else{
-
-        $("entry").textContent =
-            "--";
 
 
-        $("sl").textContent =
-            "--";
+    currentSignal=signal;
 
 
-        $("tp1").textContent =
-            "--";
+    if(!demoMode){
 
-
-        $("tp2").textContent =
-            "--";
-
-
-        $("rr").textContent =
-            "--";
-
-    }
-
-
-    if(
-        !demoMode
-    ){
-
-        $("status").textContent =
-            "🟢 REAL 行情 · " +
-            count +
+        $("status").textContent=
+            "🟢 REAL 行情 · "+
+            prices.length+
             " 个价格数据";
 
     }
@@ -1972,29 +1332,421 @@ function analyze(){
 
 
 /* =====================================================
-   REAL PRICE
+   CREATE SIGNAL
+===================================================== */
+
+function createSignal(
+    direction,
+    entry,
+    sl,
+    tp1,
+    tp2
+){
+
+    /*
+       避免同方向连续重复记录。
+
+       如果最近一条还是 OPEN
+       并且方向相同，则不创建新信号。
+    */
+
+    const last=
+        signals[signals.length-1];
+
+
+    if(
+        last&&
+        last.direction===direction&&
+        last.status==="OPEN"
+    ){
+
+        return;
+
+    }
+
+
+    const signal={
+
+        id:Date.now(),
+
+        time:new Date()
+            .toLocaleString(),
+
+        direction:direction,
+
+        entry:Number(entry),
+
+        sl:Number(sl),
+
+        tp1:Number(tp1),
+
+        tp2:Number(tp2),
+
+        status:"OPEN",
+
+        resultPrice:null,
+
+        resultTime:null
+
+    };
+
+
+    signals.push(signal);
+
+
+    if(
+        signals.length>
+        CONFIG.maxSignals
+    ){
+
+        signals.shift();
+
+    }
+
+
+    saveData();
+
+    renderHistory();
+
+    renderStats();
+
+}
+
+
+/* =====================================================
+   CHECK OPEN SIGNALS
+===================================================== */
+
+function checkOpenSignals(){
+
+    if(!currentPrice){
+        return;
+    }
+
+
+    let changed=false;
+
+
+    for(const signal of signals){
+
+        if(signal.status!=="OPEN"){
+            continue;
+        }
+
+
+        /*
+           BUY:
+           先判断 SL，
+           再判断 TP。
+
+           SELL:
+           先判断 SL，
+           再判断 TP。
+
+           注意：
+           5 秒采样无法知道同一根价格跳动
+           内到底先碰到 SL 还是 TP。
+        */
+
+
+        if(
+            signal.direction==="BUY"
+        ){
+
+            if(
+                currentPrice<=signal.sl
+            ){
+
+                signal.status="LOSS";
+
+                signal.resultPrice=
+                    currentPrice;
+
+                signal.resultTime=
+                    new Date()
+                    .toLocaleString();
+
+                changed=true;
+
+            }else if(
+                currentPrice>=signal.tp1
+            ){
+
+                signal.status="WIN";
+
+                signal.resultPrice=
+                    currentPrice;
+
+                signal.resultTime=
+                    new Date()
+                    .toLocaleString();
+
+                changed=true;
+
+            }
+
+        }
+
+
+        if(
+            signal.direction==="SELL"
+        ){
+
+            if(
+                currentPrice>=signal.sl
+            ){
+
+                signal.status="LOSS";
+
+                signal.resultPrice=
+                    currentPrice;
+
+                signal.resultTime=
+                    new Date()
+                    .toLocaleString();
+
+                changed=true;
+
+            }else if(
+                currentPrice<=signal.tp1
+            ){
+
+                signal.status="WIN";
+
+                signal.resultPrice=
+                    currentPrice;
+
+                signal.resultTime=
+                    new Date()
+                    .toLocaleString();
+
+                changed=true;
+
+            }
+
+        }
+
+    }
+
+
+    if(changed){
+
+        saveData();
+
+    }
+
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
+
+function renderHistory(){
+
+    const box=
+        $("historyContainer");
+
+
+    if(!signals.length){
+
+        box.innerHTML=
+            '<div class="empty">'+
+            '暂时没有交易信号'+
+            '</div>';
+
+        return;
+
+    }
+
+
+    let html=
+        '<div class="table-wrap">'+
+        '<table>'+
+        '<thead>'+
+        '<tr>'+
+        '<th>时间</th>'+
+        '<th>方向</th>'+
+        '<th>Entry</th>'+
+        '<th>SL</th>'+
+        '<th>TP1</th>'+
+        '<th>结果</th>'+
+        '<th>结果价</th>'+
+        '</tr>'+
+        '</thead>'+
+        '<tbody>';
+
+
+    const list=
+        [...signals]
+        .reverse();
+
+
+    for(const s of list){
+
+        let statusClass="open";
+
+        let statusText="🟡 OPEN";
+
+
+        if(s.status==="WIN"){
+
+            statusClass="win";
+
+            statusText="✅ WIN";
+
+        }
+
+
+        if(s.status==="LOSS"){
+
+            statusClass="loss";
+
+            statusText="❌ LOSS";
+
+        }
+
+
+        const directionClass=
+            s.direction==="BUY"
+                ?"green"
+                :"red";
+
+
+        html+=
+            '<tr>'+
+            '<td>'+escapeHtml(s.time)+'</td>'+
+            '<td class="'+directionClass+'">'+
+                escapeHtml(s.direction)+
+            '</td>'+
+            '<td>'+fmt(s.entry)+'</td>'+
+            '<td>'+fmt(s.sl)+'</td>'+
+            '<td>'+fmt(s.tp1)+'</td>'+
+            '<td class="'+statusClass+'">'+
+                statusText+
+            '</td>'+
+            '<td>'+
+                (
+                    s.resultPrice!==null
+                        ?fmt(s.resultPrice)
+                        :"--"
+                )+
+            '</td>'+
+            '</tr>';
+
+    }
+
+
+    html+=
+        '</tbody></table></div>';
+
+
+    box.innerHTML=html;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+function renderStats(){
+
+    const total=signals.length;
+
+    const buy=signals.filter(
+        s=>s.direction==="BUY"
+    ).length;
+
+    const sell=signals.filter(
+        s=>s.direction==="SELL"
+    ).length;
+
+    const win=signals.filter(
+        s=>s.status==="WIN"
+    ).length;
+
+    const loss=signals.filter(
+        s=>s.status==="LOSS"
+    ).length;
+
+    const open=signals.filter(
+        s=>s.status==="OPEN"
+    ).length;
+
+    const closed=win+loss;
+
+    const rate=
+        closed>0
+            ?win/closed*100
+            :null;
+
+
+    $("totalSignals").textContent=
+        total;
+
+    $("buyCount").textContent=
+        buy;
+
+    $("sellCount").textContent=
+        sell;
+
+    $("winCount").textContent=
+        win;
+
+    $("lossCount").textContent=
+        loss;
+
+    $("openCount").textContent=
+        open;
+
+    $("closedCount").textContent=
+        closed;
+
+    $("winRate").textContent=
+        rate===null
+            ?"--"
+            :fmt(rate,1)+"%";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   REAL API
 ===================================================== */
 
 async function refreshPrice(){
 
-    demoMode = false;
+    demoMode=false;
 
 
-    $("mode").textContent =
-        "REAL";
+    $("mode").textContent="REAL";
+
+    $("mode").className=
+        "badge real";
 
 
-    $("mode").className =
-        "badge badge-real";
-
-
-    const url =
+    const url=
         $("api").value.trim();
 
 
-    if(
-        !url
-    ){
+    if(!url){
 
         showError(
             "API 地址为空"
@@ -2005,28 +1757,26 @@ async function refreshPrice(){
     }
 
 
-    $("status").textContent =
+    $("status").textContent=
         "连接 Gold API...";
 
 
     try{
 
-        const controller =
+        const controller=
             new AbortController();
 
 
-        const timeout =
+        const timeout=
             setTimeout(
-                function(){
-
+                ()=>{
                     controller.abort();
-
                 },
                 8000
             );
 
 
-        const response =
+        const response=
             await fetch(
                 url,
                 {
@@ -2041,19 +1791,17 @@ async function refreshPrice(){
         clearTimeout(timeout);
 
 
-        if(
-            !response.ok
-        ){
+        if(!response.ok){
 
             throw new Error(
-                "HTTP " +
+                "HTTP "+
                 response.status
             );
 
         }
 
 
-        const data =
+        const data=
             await response.json();
 
 
@@ -2063,13 +1811,11 @@ async function refreshPrice(){
         );
 
 
-        const price =
+        const price=
             parsePrice(data);
 
 
-        if(
-            price === null
-        ){
+        if(price===null){
 
             throw new Error(
                 "API 返回无法识别价格"
@@ -2080,14 +1826,10 @@ async function refreshPrice(){
 
         updatePrice(price);
 
-
     }
     catch(error){
 
-        console.error(
-            error
-        );
-
+        console.error(error);
 
         showError(
             error.message
@@ -2102,21 +1844,16 @@ async function refreshPrice(){
    ERROR
 ===================================================== */
 
-function showError(
-    message
-){
+function showError(message){
 
-    $("mode").textContent =
+    $("mode").textContent=
         "ERROR";
 
+    $("mode").className=
+        "badge error";
 
-    $("mode").className =
-        "badge badge-error";
-
-
-    $("status").textContent =
-        "🔴 行情错误：" +
-        message;
+    $("status").textContent=
+        "🔴 行情错误："+message;
 
 }
 
@@ -2127,165 +1864,195 @@ function showError(
 
 function runDemo(){
 
-    demoMode = true;
+    demoMode=true;
 
 
-    $("mode").textContent =
-        "DEMO";
+    $("mode").textContent="DEMO";
 
-
-    $("mode").className =
-        "badge badge-demo";
-
-
-    prices = [];
-
-
-    let price =
-        4390;
+    $("mode").className=
+        "badge demo";
 
 
     /*
-       建立模拟历史数据
+       清除当前模拟价格，
+       但不清除已有信号历史。
+    */
+
+    prices=[];
+
+    currentPrice=null;
+
+    previousPrice=null;
+
+    currentSignal="WAIT";
+
+
+    let price=4390;
+
+
+    /*
+       模拟上涨行情，
+       让系统产生 BUY。
     */
 
     for(
-        let i = 0;
-        i < 120;
+        let i=0;
+        i<150;
         i++
     ){
 
-        const trend =
-            i * 0.08;
+        const trend=i*0.06;
 
+        const wave=
+            Math.sin(i/6)*1.4;
 
-        const wave =
-            Math.sin(
-                i / 6
-            ) * 1.5;
+        const random=
+            (Math.random()-.5)*.7;
 
-
-        const random =
-            (
-                Math.random() -
-                0.5
-            ) * 0.8;
-
-
-        price +=
-            0.04 +
-            trend / 100 +
-            wave * 0.08 +
+        price+=
+            .08+
+            trend/100+
+            wave*.08+
             random;
 
-
-        prices.push(
-            price
-        );
+        prices.push(price);
 
     }
 
 
-    currentPrice =
-        prices[
-            prices.length - 1
-        ];
+    currentPrice=
+        prices[prices.length-1];
+
+    previousPrice=
+        prices[prices.length-2];
 
 
-    previousPrice =
-        prices[
-            prices.length - 2
-        ];
+    $("price").textContent=
+        fmt(currentPrice);
 
+    $("techPrice").textContent=
+        fmt(currentPrice);
 
-    $("price").textContent =
-        fmt(
-            currentPrice
-        );
-
-
-    $("techPrice").textContent =
-        fmt(
-            currentPrice
-        );
-
-
-    $("change").textContent =
+    $("change").textContent=
         "🧪 DEMO 测试数据";
 
-
-    $("update").textContent =
+    $("update").textContent=
         "测试模式";
 
 
     analyze();
 
+    checkOpenSignals();
 
-    $("status").textContent =
-        "🟡 DEMO 模式 · AI 指标测试完成";
+    renderHistory();
+
+    renderStats();
+
+
+    $("status").textContent=
+        "🟡 DEMO 模式 · AI + 记录器测试完成";
 
 }
 
 
 /* =====================================================
-   CLEAR HISTORY
+   CLEAR SIGNALS
 ===================================================== */
 
-function clearHistory(){
+function clearSignals(){
 
-    prices = [];
+    if(
+        !confirm(
+            "确定要清除所有信号记录吗？"
+        )
+    ){
 
-    currentPrice = null;
+        return;
 
-    previousPrice = null;
+    }
 
-    demoMode = false;
+
+    signals=[];
+
+    saveData();
+
+    renderHistory();
+
+    renderStats();
+
+
+    $("status").textContent=
+        "🟡 信号历史已清除";
+
+}
+
+
+/* =====================================================
+   CLEAR EVERYTHING
+===================================================== */
+
+function clearAll(){
+
+    if(
+        !confirm(
+            "确定清除所有价格和信号数据吗？"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    prices=[];
+
+    signals=[];
+
+    currentPrice=null;
+
+    previousPrice=null;
+
+    currentSignal="WAIT";
 
 
     localStorage.removeItem(
-        CONFIG.storageKey
+        CONFIG.priceStorage
+    );
+
+    localStorage.removeItem(
+        CONFIG.signalStorage
     );
 
 
-    $("price").textContent =
-        "----";
+    $("price").textContent="----";
 
+    $("techPrice").textContent="--";
 
-    $("techPrice").textContent =
-        "--";
+    $("change").textContent="等待行情";
 
+    $("update").textContent="尚未更新";
 
-    $("change").textContent =
-        "等待行情";
+    $("signal").textContent="WAIT";
 
+    $("signal").className=
+        "signal wait";
 
-    $("update").textContent =
-        "尚未更新";
-
-
-    $("signal").textContent =
+    $("direction").textContent=
         "WAIT";
 
+    $("scoreBar").style.width="50%";
 
-    $("signal").className =
-        "signal signal-wait";
-
-
-    $("direction").textContent =
-        "WAIT";
-
-
-    $("scoreBar").style.width =
-        "50%";
-
-
-    $("scoreText").textContent =
+    $("scoreText").textContent=
         "历史数据已清除";
 
 
-    $("status").textContent =
-        "🟡 历史数据已清除";
+    renderHistory();
 
+    renderStats();
+
+
+    $("status").textContent=
+        "🟡 全部数据已清除";
 
 }
 
@@ -2296,59 +2063,48 @@ function clearHistory(){
 
 function start(){
 
-    loadHistory();
+    loadData();
+
+    renderHistory();
+
+    renderStats();
 
 
-    /*
-       恢复历史数据
-    */
+    if(prices.length){
 
-    if(
-        prices.length > 0
-    ){
+        currentPrice=
+            prices[prices.length-1];
 
-        currentPrice =
-            prices[
-                prices.length - 1
-            ];
+        previousPrice=
+            prices.length>1
+                ?prices[prices.length-2]
+                :null;
 
 
-        previousPrice =
-            prices[
-                prices.length - 2
-            ] || null;
+        $("price").textContent=
+            fmt(currentPrice);
 
-
-        $("price").textContent =
-            fmt(
-                currentPrice
-            );
-
-
-        $("techPrice").textContent =
-            fmt(
-                currentPrice
-            );
-
+        $("techPrice").textContent=
+            fmt(currentPrice);
 
         analyze();
 
     }
 
 
-    $("status").textContent =
-        "🟢 AI GOLD V1.4 已启动";
+    $("status").textContent=
+        "🟢 AI GOLD V1.5 已启动";
 
 
     /*
-       第一次立即更新
+       立即获取一次 REAL 价格
     */
 
     refreshPrice();
 
 
     /*
-       每 5 秒更新
+       每 5 秒自动更新
     */
 
     setInterval(
@@ -2358,10 +2114,6 @@ function start(){
 
 }
 
-
-/* =====================================================
-   RUN
-===================================================== */
 
 start();
 
