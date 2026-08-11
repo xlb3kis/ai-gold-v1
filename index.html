@@ -1,901 +1,1238 @@
-<!DOCTYPE html>
+[8:02 PM, 8/11/2026] J.: <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
-
-<title>AI GOLD V1.1</title>
+<title>AI GOLD V1.2</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
-body {
-
-    margin: 0;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background: #080d1c;
-
-    color: white;
+body{
+    margin:0;
+    background:#070d1b;
+    color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,Arial,sans-serif;
 }
 
-.container {
-
-    width: 100%;
-
-    max-width: 480px;
-
-    margin: auto;
-
-    padding: 18px;
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:25px 18px 60px;
 }
 
-.header {
-
-    text-align: center;
-
-    padding:
-        18px 0
-        22px;
+.header{
+    text-align:center;
+    padding:25px 0 35px;
 }
 
-.header h1 {
-
-    margin: 0;
-
-    font-size: 30px;
+.logo{
+    font-size:54px;
 }
 
-.header p {
-
-    margin-top: 8px;
-
-    color: #9ca3af;
-
-    font-size: 15px;
+.title{
+    font-size:38px;
+    font-weight:800;
+    margin-top:5px;
 }
 
-.card {
+.subtitle{
+    color:#8f98ad;
+    font-size:18px;
+    margin-top:8p…
+[8:15 PM, 8/11/2026] J.: <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-    background: #151d35;
+<title>AI GOLD V1.2</title>
 
-    border-radius: 20px;
-
-    padding: 19px;
-
-    margin-bottom: 15px;
-
-    box-shadow:
-        0 8px 30px
-        rgba(0,0,0,0.25);
+<style>
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
-.price-card {
-
-    text-align: center;
+body{
+    margin:0;
+    background:#070d1b;
+    color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,Arial,sans-serif;
 }
 
-.small {
-
-    color: #9ca3af;
-
-    font-size: 14px;
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:25px 18px 60px;
 }
 
-.price {
-
-    font-size: 40px;
-
-    font-weight: 800;
-
-    margin-top: 7px;
+.header{
+    text-align:center;
+    padding:25px 0 35px;
 }
 
-.change {
-
-    margin-top: 5px;
-
-    font-size: 15px;
+.logo{
+    font-size:54px;
 }
 
-.green {
-
-    color: #22c55e;
+.title{
+    font-size:38px;
+    font-weight:800;
+    margin-top:5px;
 }
 
-.red {
-
-    color: #ef4444;
+.subtitle{
+    color:#8f98ad;
+    font-size:18px;
+    margin-top:8px;
 }
 
-.gray {
-
-    color: #9ca3af;
+.card{
+    background:#141d36;
+    border-radius:28px;
+    padding:25px;
+    margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
 }
 
-.score-card {
-
-    text-align: center;
+.price-title{
+    text-align:center;
+    color:#9aa4ba;
+    font-size:18px;
 }
 
-.score {
-
-    font-size: 50px;
-
-    font-weight: 800;
-
-    margin-top: 5px;
+.price{
+    text-align:center;
+    font-size:64px;
+    font-weight:800;
+    margin:18px 0 5px;
+    letter-spacing:-2px;
 }
 
-.signal {
-
-    display: inline-block;
-
-    padding:
-        11px 28px;
-
-    border-radius: 30px;
-
-    font-size: 21px;
-
-    font-weight: 800;
-
-    margin-top: 8px;
+.price-change{
+    text-align:center;
+    color:#a7b0c4;
+    font-size:17px;
 }
 
-.buy {
-
-    background:
-        rgba(34,197,94,0.18);
-
-    color: #22c55e;
+.update{
+    text-align:center;
+    color:#707b94;
+    margin-top:12px;
+    font-size:14px;
 }
 
-.sell {
-
-    background:
-        rgba(239,68,68,0.18);
-
-    color: #ef4444;
+.signal-card{
+    text-align:center;
 }
 
-.wait {
-
-    background:
-        rgba(156,163,175,0.18);
-
-    color: #d1d5db;
+.signal-title{
+    color:#9ca6bb;
+    font-size:19px;
 }
 
-.row {
-
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    padding: 12px 0;
-
-    border-bottom:
-        1px solid #29324b;
+.signal{
+    font-size:48px;
+    font-weight:900;
+    margin:20px 0;
 }
 
-.row:last-child {
-
-    border-bottom: none;
+.signal.buy{
+    color:#35d58a;
 }
 
-.label {
-
-    color: #9ca3af;
+.signal.sell{
+    color:#ff5d6c;
 }
 
-.value {
-
-    font-weight: 700;
+.signal.wait{
+    color:#b9c0d0;
 }
 
-.section-title {
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    margin-bottom: 5px;
+.score{
+    height:15px;
+    background:#28324d;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
 }
 
-.status {
-
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    margin-bottom: 10px;
+.score-bar{
+    height:100%;
+    width:50%;
+    background:#35d58a;
+    transition:.4s;
 }
 
-.dot {
-
-    display:
-        inline-block;
-
-    width: 10px;
-
-    height: 10px;
-
-    border-radius: 50%;
-
-    margin-right: 7px;
-
-    background:
-        #22c55e;
+.score-text{
+    font-size:16px;
+    color:#aeb7ca;
 }
 
-button {
-
-    width: 100%;
-
-    border: none;
-
-    border-radius: 15px;
-
-    padding: 16px;
-
-    font-size: 17px;
-
-    font-weight: 800;
-
-    color: white;
-
-    background: #2563eb;
-
-    margin-bottom: 12px;
+.section-title{
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:22px;
 }
 
-button:active {
-
-    transform:
-        scale(0.98);
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding:16px 0;
+    border-bottom:1px solid #28324a;
 }
 
-.warning {
-
-    background:
-        rgba(245,158,11,0.10);
-
-    color: #fbbf24;
-
-    border-radius: 13px;
-
-    padding: 14px;
-
-    font-size: 13px;
-
-    line-height: 1.6;
+.row:last-child{
+    border-bottom:none;
 }
 
-.footer {
-
-    text-align: center;
-
-    color: #6b7280;
-
-    font-size: 12px;
-
-    padding:
-        5px 0 30px;
+.label{
+    color:#9aa4ba;
 }
 
-.timestamp {
-
-    margin-top: 7px;
-
-    font-size: 12px;
-
-    color: #6b7280;
+.value{
+    font-weight:700;
 }
 
-.loading {
-
-    color: #fbbf24;
+.green{
+    color:#35d58a;
 }
 
+.red{
+    color:#ff5d6c;
+}
+
+.yellow{
+    color:#f2c94c;
+}
+
+.trade-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.trade-box{
+    background:#0d1428;
+    padding:18px;
+    border-radius:18px;
+}
+
+.trade-label{
+    color:#8e99ae;
+    font-size:14px;
+}
+
+.trade-value{
+    font-size:22px;
+    font-weight:800;
+    margin-top:8px;
+}
+
+button{
+    width:100%;
+    border:none;
+    border-radius:18px;
+    padding:17px;
+    font-size:18px;
+    font-weight:800;
+    background:#26314e;
+    color:#fff;
+    margin-top:15px;
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+.status{
+    text-align:center;
+    color:#8f99ad;
+    font-size:14px;
+    margin-top:15px;
+}
+
+.warning{
+    color:#f2c94c;
+    line-height:1.6;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    background:#0b1224;
+    border:1px solid #303b58;
+    color:white;
+    border-radius:14px;
+    padding:14px;
+    margin-top:8px;
+    outline:none;
+}
+
+select{
+    width:100%;
+    background:#0b1224;
+    border:1px solid #303b58;
+    color:white;
+    border-radius:14px;
+    padding:14px;
+    margin-top:8px;
+}
+
+.small{
+    color:#7f8aa1;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:8px;
+}
+
+.footer{
+    text-align:center;
+    color:#59647b;
+    font-size:12px;
+    margin-top:30px;
+}
+
+@media(max-width:500px){
+    .container{
+        padding:18px 14px 45px;
+    }
+
+    .logo{
+        font-size:44px;
+    }
+
+    .title{
+        font-size:32px;
+    }
+
+    .price{
+        font-size:48px;
+    }
+
+    .card{
+        padding:20px;
+        border-radius:23px;
+    }
+
+    .signal{
+        font-size:40px;
+    }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+    <div class="header">
+        <div class="logo">🤖</div>
+        <div class="title">AI GOLD</div>
+        <div class="subtitle">
+            V1.2 · XAUUSD · AI TRADING ENGINE
+        </div>
+    </div>
 
-<!-- ========================= -->
+    <!-- PRICE -->
+    <div class="card">
 
-<div class="header">
+        <div class="price-title">
+            XAU/USD 黄金现货参考价格
+        </div>
 
-<h1>🤖 AI GOLD</h1>
+        <div class="price" id="price">
+            ----
+        </div>
 
-<p>
-V1.1 · XAUUSD · REAL SPOT FEED
-</p>
+        <div class="price-change" id="change">
+            等待行情
+        </div>
 
-</div>
+        <div class="update" id="update">
+            尚未更新
+        </div>
+
+    </div>
+
+
+    <!-- AI SIGNAL -->
+    <div class="card signal-card">
+
+        <div class="signal-title">
+            AI 综合评分
+        </div>
+
+        <div class="signal wait" id="signal">
+            WAIT
+        </div>
+
+        <div class="score">
+            <div class="score-bar" id="scoreBar"></div>
+        </div>
+
+        <div class="score-text" id="scoreText">
+            数据积累中
+        </div>
 
+    </div>
+
 
-<!-- ========================= -->
+    <!-- TECHNICAL -->
+    <div class="card">
+
+        <div class="section-title">
+            📊 技术分析
+        </div>
+
+        <div class="row">
+            <span class="label">价格动量</span>
+            <span class="value" id="momentum">--</span>
+        </div>
+
+        <div class="row">
+            <span class="label">EMA 20</span>
+            <span class="value" id="ema20">--</span>
+        </div>
+
+        <div class="row">
+            <span class="label">EMA 50</span>
+            <span class="value" id="ema50">--</span>
+        </div>
+
+        <div class="row">
+            <span class="label">RSI 14</span>
+            <span class="value" id="rsi">--</span>
+        </div>
+
+        <div class="row">
+            <span class="label">MACD</span>
+            <span class="value" id="macd">--</span>
+        </div>
 
-<div class="card price-card">
+        <div class="row">
+            <span class="label">趋势</span>
+            <span class="value" id="trend">等待数据</span>
+        </div>
 
-<div class="small">
+    </div>
 
-XAU/USD 黄金现货参考价格
 
-</div>
+    <!-- TRADE PLAN -->
+    <div class="card">
 
+        <div class="section-title">
+            🎯 AI 交易计划
+        </div>
+
+        <div class="trade-grid">
 
-<div
-id="price"
-class="price"
->
-
-读取中...
-
-</div>
-
-
-<div
-id="change"
-class="change gray"
->
-
-等待数据
-
-</div>
-
-
-<div
-id="timestamp"
-class="timestamp"
->
-
---
-
-</div>
-
-</div>
-
-
-<!-- ========================= -->
-
-<div class="card score-card">
-
-<div class="small">
-
-AI 综合评分
-
-</div>
-
-
-<div
-id="score"
-class="score"
->
-
---
-
-</div>
-
-
-<div
-id="signal"
-class="signal wait"
->
-
-WAIT
-
-</div>
-
-</div>
-
-
-<!-- ========================= -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-📊 技术分析
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-价格动量
-</span>
-
-<span
-id="momentum"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-EMA 20
-</span>
-
-<span
-id="ema20"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-EMA 50
-</span>
-
-<span
-id="ema50"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-RSI
-</span>
-
-<span
-id="rsi"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-MACD
-</span>
-
-<span
-id="macd"
-class="value"
->
---
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- ========================= -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-🧠 AI 判断
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-趋势
-</span>
-
-<span
-id="trend"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-动量
-</span>
-
-<span
-id="momentum2"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-RSI状态
-</span>
-
-<span
-id="rsiState"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-MACD状态
-</span>
-
-<span
-id="macdState"
-class="value"
->
---
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- ========================= -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-🎯 模拟交易计划
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-方向
-</span>
-
-<span
-id="direction"
-class="value"
->
-WAIT
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-参考进场
-</span>
-
-<span
-id="entry"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-止损 SL
-</span>
-
-<span
-id="sl"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-止盈 TP
-</span>
-
-<span
-id="tp"
-class="value"
->
---
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-风险比例
-</span>
-
-<span class="value">
-
-0.5%
-
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- ========================= -->
-
-<div class="card">
-
-
-<div class="section-title">
-
-☁️ 数据状态
-
-</div>
-
-
-<div class="status">
-
-<span>
-
-<span
-class="dot"
-id="statusDot"
-></span>
-
-行情 API
-
-</span>
-
-
-<strong
-id="apiStatus"
-class="green"
->
-
-ONLINE
-
-</strong>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-数据源
-</span>
-
-<span class="value">
-
-Gold API
-
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-交易品种
-</span>
-
-<span class="value">
-
-XAUUSD
-
-</span>
-
-</div>
-
-
-<div class="row">
-
-<span class="label">
-自动刷新
-</span>
-
-<span class="value">
-
-10 秒
-
-</span>
-
-</div>
-
-
-</div>
-
-
-<!-- ========================= -->
-
-<button
-onclick="loadGoldPrice()"
->
-
-🔄 立即刷新
-
-</button>
-
-
-<div class="warning">
-
-⚠️ 重要说明
-
-<br><br>
-
-当前 V1.1 已经使用真实黄金现货参考行情，
-不再使用随机模拟价格。
-
-但该行情并非 CPT Markets 的 MT5
-实时报价。
-
-因此 BUY / SELL 只是策略测试信号，
-<strong>不会连接你的 CPT Markets Live
-账户，也不会自动下单。</strong>
-
-<br><br>
-
-真正的自动交易版本需要使用
-CPT Markets MT5 的实际报价作为
-交易执行数据源。
-
-</div>
-
-
-<div class="footer">
-
-AI GOLD V1.1<br>
-
-XAUUSD AI Analysis System
-
-</div>
-
+            <div class="trade-box">
+                <div class="trade-label">方向</div>
+                <div class="trade-value" id="tradeDirection">
+                    WAIT
+                </div>
+            </div>
+
+            <div class="trade-box">
+                <div class="trade-label">入场</div>
+                <div class="trade-value" id="entry">
+                    --
+                </div>
+            </div>
+
+            <div class="trade-box">
+                <div class="trade-label">止损 SL</div>
+                <div class="trade-value" id="sl">
+                    --
+                </div>
+            </div>
+
+            <div class="trade-box">
+                <div class="trade-label">止盈 TP1</div>
+                <div class="trade-value" id="tp1">
+                    --
+                </div>
+            </div>
+
+            <div class="trade-box">
+                <div class="trade-label">止盈 TP2</div>
+                <div class="trade-value" id="tp2">
+                    --
+                </div>
+            </div>
+
+            <div class="trade-box">
+                <div class="trade-label">风险收益</div>
+                <div class="trade-value" id="rr">
+                    --
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- API SETTINGS -->
+    <div class="card">
+
+        <div class="section-title">
+            ⚙️ 行情设置
+        </div>
+
+        <label class="label">
+            API Endpoint
+        </label>
+
+        <input
+            id="apiEndpoint"
+            value="https://api.gold-api.com/price/XAU"
+            placeholder="行情 API 地址">
+
+        <div class="small">
+            注意：不同行情供应商返回的数据格式不同。
+            如果你的 API 不是标准格式，需要调整 parseMarketData()。
+        </div>
+
+        <button onclick="manualRefresh()">
+            🔄 立即刷新行情
+        </button>
+
+        <button onclick="loadDemoData()">
+            🧪 测试 AI 指标
+        </button>
+
+        <div class="status" id="status">
+            系统启动中...
+        </div>
+
+    </div>
+
+
+    <!-- WARNING -->
+    <div class="card">
+
+        <div class="section-title">
+            ⚠️ 系统说明
+        </div>
+
+        <div class="warning">
+            本系统的 BUY / SELL 只是技术分析信号，
+            不是保证盈利的交易指令。真实下单前必须连接你的
+            MT5 / 经纪商账户，并确认行情来源。
+            <br><br>
+            当前 V1.2 默认不会自动下真实订单。
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        AI GOLD V1.2 · XAUUSD
+    </div>
 
 </div>
 
 
 <script>
 
+/* =========================================================
+   AI GOLD V1.2
+   ========================================================= */
 
-/* =================================
+const CONFIG = {
 
-   AI GOLD V1.1
+    refreshMs: 5000,
 
-   REAL XAU PRICE
+    historyLength: 100,
 
-================================= */
+    /* ATR-like risk distance */
+    slDistance: 7,
+
+    tp1Distance: 7,
+
+    tp2Distance: 14
+
+};
 
 
-/*
-Gold API
-*/
-
-const API_URL =
-"https://api.gold-api.com/price/XAU";
-
-
-/*
-保存价格历史
-
-用于计算 RSI / EMA / MACD
-*/
+/* =========================================================
+   GLOBAL DATA
+   ========================================================= */
 
 let prices = [];
 
+let currentPrice = null;
 
-/*
-最多保存 200 个价格
-*/
+let previousPrice = null;
 
-const MAX_HISTORY = 200;
-
-
-/*
-上一次价格
-*/
-
-let lastPrice = null;
+let lastSignal = "WAIT";
 
 
-/* =================================
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
 
-   获取黄金价格
-
-================================= */
-
-async function loadGoldPrice() {
+const $ = id => document.getElementById(id);
 
 
-    try {
+/* =========================================================
+   NUMBER FORMAT
+   ========================================================= */
+
+function fmt(value, digits = 2){
+
+    if(
+        value === null ||
+        value === undefined ||
+        Number.isNaN(Number(value))
+    ){
+        return "--";
+    }
+
+    return Number(value).toFixed(digits);
+
+}
 
 
-        setStatus(
-            true,
-            "ONLINE"
+/* =========================================================
+   EMA
+   ========================================================= */
+
+function EMA(data, period){
+
+    if(data.length < period){
+        return null;
+    }
+
+    const multiplier = 2 / (period + 1);
+
+    let ema =
+        data
+        .slice(0, period)
+        .reduce((a,b) => a + b, 0) / period;
+
+    for(let i = period; i < data.length; i++){
+
+        ema =
+            ((data[i] - ema) * multiplier) + ema;
+
+    }
+
+    return ema;
+
+}
+
+
+/* =========================================================
+   RSI
+   ========================================================= */
+
+function RSI(data, period = 14){
+
+    if(data.length < period + 1){
+        return null;
+    }
+
+    let gains = 0;
+
+    let losses = 0;
+
+    for(let i = 1; i <= period; i++){
+
+        const change =
+            data[i] - data[i - 1];
+
+        if(change >= 0){
+            gains += change;
+        }else{
+            losses += Math.abs(change);
+        }
+
+    }
+
+    let avgGain = gains / period;
+
+    let avgLoss = losses / period;
+
+    for(let i = period + 1; i < data.length; i++){
+
+        const change =
+            data[i] - data[i - 1];
+
+        const gain =
+            change > 0 ? change : 0;
+
+        const loss =
+            change < 0 ? Math.abs(change) : 0;
+
+        avgGain =
+            ((avgGain * (period - 1)) + gain) / period;
+
+        avgLoss =
+            ((avgLoss * (period - 1)) + loss) / period;
+
+    }
+
+    if(avgLoss === 0){
+        return 100;
+    }
+
+    const rs = avgGain / avgLoss;
+
+    return 100 - (100 / (1 + rs));
+
+}
+
+
+/* =========================================================
+   MACD
+   ========================================================= */
+
+function MACD(data){
+
+    if(data.length < 35){
+        return null;
+    }
+
+    const ema12 = EMA(data, 12);
+
+    const ema26 = EMA(data, 26);
+
+    if(
+        ema12 === null ||
+        ema26 === null
+    ){
+        return null;
+    }
+
+    return ema12 - ema26;
+
+}
+
+
+/* =========================================================
+   MOMENTUM
+   ========================================================= */
+
+function momentum(data){
+
+    if(data.length < 6){
+        return null;
+    }
+
+    return data[data.length - 1] -
+           data[data.length - 6];
+
+}
+
+
+/* =========================================================
+   ANALYZE
+   ========================================================= */
+
+function analyze(){
+
+    if(prices.length < 50){
+
+        $("signal").textContent = "WAIT";
+
+        $("signal").className =
+            "signal wait";
+
+        $("scoreText").textContent =
+            需要至少 50 个价格数据，目前 ${prices.length};
+
+        $("status").textContent =
+            "正在积累行情数据...";
+
+        return;
+
+    }
+
+
+    const price =
+        prices[prices.length - 1];
+
+
+    const ema20 =
+        EMA(prices,20);
+
+    const ema50 =
+        EMA(prices,50);
+
+    const rsi =
+        RSI(prices,14);
+
+    const macd =
+        MACD(prices);
+
+    const mom =
+        momentum(prices);
+
+
+    $("ema20").textContent =
+        fmt(ema20);
+
+    $("ema50").textContent =
+        fmt(ema50);
+
+    $("rsi").textContent =
+        fmt(rsi,1);
+
+    $("macd").textContent =
+        fmt(macd,2);
+
+    $("momentum").textContent =
+        fmt(mom,2);
+
+
+    /* =========================================
+       SCORE
+       ========================================= */
+
+    let score = 50;
+
+
+    /* EMA */
+
+    if(price > ema20){
+        score += 10;
+    }else{
+        score -= 10;
+    }
+
+
+    if(ema20 > ema50){
+        score += 15;
+    }else{
+        score -= 15;
+    }
+
+
+    /* RSI */
+
+    if(rsi > 55 && rsi < 75){
+        score += 10;
+    }
+
+    if(rsi < 45 && rsi > 25){
+        score -= 10;
+    }
+
+
+    /* MACD */
+
+    if(macd > 0){
+        score += 10;
+    }else{
+        score -= 10;
+    }
+
+
+    /* MOMENTUM */
+
+    if(mom > 0){
+        score += 5;
+    }else{
+        score -= 5;
+    }
+
+
+    score =
+        Math.max(
+            0,
+            Math.min(100,score)
         );
+
+
+    $("scoreBar").style.width =
+        score + "%";
+
+
+    $("scoreText").textContent =
+        多头 ${score}% · 空头 ${100-score}%;
+
+
+    /* =========================================
+       SIGNAL
+       ========================================= */
+
+    let signal = "WAIT";
+
+
+    if(score >= 70){
+        signal = "BUY";
+    }
+    else if(score <= 30){
+        signal = "SELL";
+    }
+
+
+    lastSignal = signal;
+
+
+    $("signal").textContent =
+        signal;
+
+    $("tradeDirection").textContent =
+        signal;
+
+
+    $("signal").className =
+        "signal " +
+        signal.toLowerCase();
+
+
+    /* =========================================
+       TREND
+       ========================================= */
+
+    let trend = "震荡";
+
+    if(
+        price > ema20 &&
+        ema20 > ema50
+    ){
+        trend = "多头";
+    }
+
+    else if(
+        price < ema20 &&
+        ema20 < ema50
+    ){
+        trend = "空头";
+    }
+
+
+    $("trend").textContent =
+        trend;
+
+
+    $("trend").className =
+        "value " +
+        (
+            trend === "多头"
+            ? "green"
+            : trend === "空头"
+            ? "red"
+            : "yellow"
+        );
+
+
+    /* =========================================
+       TRADE PLAN
+       ========================================= */
+
+    if(signal === "BUY"){
+
+        const sl =
+            price - CONFIG.slDistance;
+
+        const tp1 =
+            price + CONFIG.tp1Distance;
+
+        const tp2 =
+            price + CONFIG.tp2Distance;
+
+
+        $("entry").textContent =
+            fmt(price);
+
+        $("sl").textContent =
+            fmt(sl);
+
+        $("tp1").textContent =
+            fmt(tp1);
+
+        $("tp2").textContent =
+            fmt(tp2);
+
+        $("rr").textContent =
+            "1 : 2";
+
+        $("tradeDirection").className =
+            "trade-value green";
+
+    }
+
+    else if(signal === "SELL"){
+
+        const sl =
+            price + CONFIG.slDistance;
+
+        const tp1 =
+            price - CONFIG.tp1Distance;
+
+        const tp2 =
+            price - CONFIG.tp2Distance;
+
+
+        $("entry").textContent =
+            fmt(price);
+
+        $("sl").textContent =
+            fmt(sl);
+
+        $("tp1").textContent =
+            fmt(tp1);
+
+        $("tp2").textContent =
+            fmt(tp2);
+
+        $("rr").textContent =
+            "1 : 2";
+
+        $("tradeDirection").className =
+            "trade-value red";
+
+    }
+
+    else{
+
+        $("entry").textContent =
+            "--";
+
+        $("sl").textContent =
+            "--";
+
+        $("tp1").textContent =
+            "--";
+
+        $("tp2").textContent =
+            "--";
+
+        $("rr").textContent =
+            "--";
+
+        $("tradeDirection").className =
+            "trade-value";
+
+    }
+
+}
+
+
+/* =========================================================
+   UPDATE PRICE
+   ========================================================= */
+
+function updatePrice(price){
+
+    price =
+        Number(price);
+
+
+    if(
+        !Number.isFinite(price) ||
+        price <= 0
+    ){
+        return;
+    }
+
+
+    previousPrice =
+        currentPrice;
+
+    currentPrice =
+        price;
+
+
+    prices.push(price);
+
+
+    if(
+        prices.length >
+        CONFIG.historyLength
+    ){
+        prices.shift();
+    }
+
+
+    $("price").textContent =
+        fmt(price);
+
+
+    if(previousPrice !== null){
+
+        const diff =
+            price - previousPrice;
+
+        const pct =
+            (diff / previousPrice) * 100;
+
+
+        $("change").textContent =
+            `${diff >= 0 ? "↑" : "↓"} ` +
+            `${fmt(diff)} ` +
+            (${fmt(pct,3)}%);
+
+
+        $("change").className =
+            "price-change " +
+            (
+                diff >= 0
+                ? "green"
+                : "red"
+            );
+
+    }
+
+
+    const now =
+        new Date();
+
+
+    $("update").textContent =
+        "更新：" +
+        now.toLocaleTimeString();
+
+
+    analyze();
+
+}
+
+
+/* =========================================================
+   PARSE API DATA
+   ========================================================= */
+
+function parseMarketData(data){
+
+    /*
+       支持几种常见 API 格式：
+
+       {
+           price: 4388.80
+       }
+
+       {
+           price: "4388.80"
+       }
+
+       {
+           ask: 4388.80
+       }
+
+       {
+           bid: 4388.70
+       }
+
+       {
+           XAUUSD: 4388.80
+       }
+    */
+
+
+    if(data === null){
+        return null;
+    }
+
+
+    if(typeof data === "number"){
+        return data;
+    }
+
+
+    if(
+        data.price !== undefined
+    ){
+        return Number(data.price);
+    }
+
+
+    if(
+        data.ask !== undefined
+    ){
+        return Number(data.ask);
+    }
+
+
+    if(
+        data.bid !== undefined
+    ){
+        return Number(data.bid);
+    }
+
+
+    if(
+        data.XAUUSD !== undefined
+    ){
+        return Number(data.XAUUSD);
+    }
+
+
+    if(
+        data.xauusd !== undefined
+    ){
+        return Number(data.xauusd);
+    }
+
+
+    if(
+        data.gold !== undefined
+    ){
+        return Number(data.gold);
+    }
+
+
+    return null;
+
+}
+
+
+/* =========================================================
+   FETCH LIVE PRICE
+   ========================================================= */
+
+async function fetchLivePrice(){
+
+    const endpoint =
+        $("apiEndpoint").value.trim();
+
+
+    if(!endpoint){
+
+        $("status").textContent =
+            "请设置行情 API";
+
+        return;
+
+    }
+
+
+    try{
+
+        $("status").textContent =
+            "连接行情服务器...";
 
 
         const response =
             await fetch(
-                API_URL,
+                endpoint,
                 {
-                    cache: "no-store"
+                    method:"GET",
+                    cache:"no-store"
                 }
             );
 
 
-        if (!response.ok) {
+        if(!response.ok){
 
             throw new Error(
-                "API error"
+                "HTTP " + response.status
             );
 
         }
@@ -905,1101 +1242,134 @@ async function loadGoldPrice() {
             await response.json();
 
 
-        /*
-        API返回 price
-        */
-
         const price =
-            Number(data.price);
+            parseMarketData(data);
 
 
-        if (
-            !Number.isFinite(price)
-        ) {
+        if(!price){
 
             throw new Error(
-                "Invalid price"
+                "无法解析价格"
             );
 
         }
 
-
-        /*
-        加入历史
-        */
-
-        prices.push(price);
-
-
-        if (
-            prices.length >
-            MAX_HISTORY
-        ) {
-
-            prices.shift();
-
-        }
-
-
-        /*
-        显示价格
-        */
 
         updatePrice(price);
 
 
-        /*
-        计算 AI
-        */
-
-        calculateAI(price);
-
-
-        /*
-        更新时间
-        */
-
-        const now =
-            new Date();
-
-
-        document.getElementById(
-            "timestamp"
-        ).innerText =
-            "更新：" +
-            now.toLocaleTimeString(
-                "zh-CN"
-            );
-
-
-        lastPrice = price;
+        $("status").textContent =
+            "🟢 行情连接正常";
 
 
     }
-
-    catch (error) {
-
+    catch(error){
 
         console.error(error);
 
 
-        setStatus(
-            false,
-            "OFFLINE"
-        );
-
-
-        document.getElementById(
-            "timestamp"
-        ).innerText =
-            "行情获取失败";
-
+        $("status").textContent =
+            "🔴 行情连接失败：" +
+            error.message;
 
     }
 
 }
 
 
-/* =================================
+/* =========================================================
+   DEMO DATA
+   ========================================================= */
 
-   显示价格
+function loadDemoData(){
 
-================================= */
-
-function updatePrice(price) {
-
-
-    document.getElementById(
-        "price"
-    ).innerText =
-        price.toFixed(2);
+    prices = [];
 
 
-    /*
-    价格变化
-    */
-
-    if (
-        lastPrice !== null
-    ) {
+    let price = 4388.80;
 
 
-        const difference =
-            price - lastPrice;
+    for(let i = 0; i < 100; i++){
+
+        const wave =
+            Math.sin(i / 5) * 2;
+
+        const random =
+            (Math.random() - .5) * 1.5;
+
+        price +=
+            .25 + wave * .08 + random;
 
 
-        const percent =
-            (
-                difference /
-                lastPrice *
-                100
-            );
-
-
-        const change =
-            document.getElementById(
-                "change"
-            );
-
-
-        if (
-            difference > 0
-        ) {
-
-            change.innerText =
-                "▲ +" +
-                difference.toFixed(2) +
-                " (" +
-                percent.toFixed(3) +
-                "%)";
-
-            change.className =
-                "change green";
-
-        }
-
-        else if (
-            difference < 0
-        ) {
-
-            change.innerText =
-                "▼ " +
-                difference.toFixed(2) +
-                " (" +
-                percent.toFixed(3) +
-                "%)";
-
-            change.className =
-                "change red";
-
-        }
-
-        else {
-
-            change.innerText =
-                "→ 价格不变";
-
-            change.className =
-                "change gray";
-
-        }
+        prices.push(price);
 
     }
+
+
+    currentPrice =
+        prices[prices.length - 1];
+
+
+    previousPrice =
+        prices[prices.length - 2];
+
+
+    $("price").textContent =
+        fmt(currentPrice);
+
+
+    $("change").textContent =
+        "🧪 DEMO 数据";
+
+
+    $("update").textContent =
+        "测试模式";
+
+
+    $("status").textContent =
+        "🟡 DEMO 模式：仅测试指标";
+
+
+    analyze();
 
 }
 
 
-/* =================================
+/* =========================================================
+   MANUAL REFRESH
+   ========================================================= */
 
-   EMA
+function manualRefresh(){
 
-================================= */
-
-function calculateEMA(
-    values,
-    period
-) {
-
-
-    if (
-        values.length === 0
-    ) {
-
-        return 0;
-
-    }
-
-
-    const multiplier =
-        2 /
-        (period + 1);
-
-
-    let ema =
-        values[0];
-
-
-    for (
-        let i = 1;
-        i < values.length;
-        i++
-    ) {
-
-
-        ema =
-            (
-                values[i] -
-                ema
-            )
-            *
-            multiplier
-            +
-            ema;
-
-    }
-
-
-    return ema;
+    fetchLivePrice();
 
 }
 
 
-/* =================================
+/* =========================================================
+   START
+   ========================================================= */
 
-   RSI
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-================================= */
+        $("status").textContent =
+            "AI GOLD V1.2 启动中...";
 
-function calculateRSI(
-    values,
-    period = 14
-) {
 
+        fetchLivePrice();
 
-    if (
-        values.length <= period
-    ) {
 
-        return 50;
-
-    }
-
-
-    let gains = 0;
-
-    let losses = 0;
-
-
-    const start =
-        values.length -
-        period;
-
-
-    for (
-        let i = start;
-        i < values.length;
-        i++
-    ) {
-
-
-        const change =
-            values[i] -
-            values[i - 1];
-
-
-        if (
-            change > 0
-        ) {
-
-            gains += change;
-
-        }
-
-        else {
-
-            losses -= change;
-
-        }
-
-    }
-
-
-    const averageGain =
-        gains / period;
-
-
-    const averageLoss =
-        losses / period;
-
-
-    if (
-        averageLoss === 0
-    ) {
-
-        return 100;
-
-    }
-
-
-    const rs =
-        averageGain /
-        averageLoss;
-
-
-    return 100 -
-        (
-            100 /
-            (1 + rs)
-        );
-
-}
-
-
-/* =================================
-
-   MACD
-
-================================= */
-
-function calculateMACD(
-    values
-) {
-
-
-    if (
-        values.length < 26
-    ) {
-
-        return {
-            macd: 0,
-            signal: 0
-        };
-
-    }
-
-
-    const ema12 =
-        calculateEMA(
-            values,
-            12
-        );
-
-
-    const ema26 =
-        calculateEMA(
-            values,
-            26
-        );
-
-
-    const macd =
-        ema12 -
-        ema26;
-
-
-    /*
-    简化版 signal
-    */
-
-    const signal =
-        calculateEMA(
-            values,
-            9
-        )
-        -
-        calculateEMA(
-            values,
-            26
-        );
-
-
-    return {
-
-        macd: macd,
-
-        signal: signal
-
-    };
-
-}
-
-
-/* =================================
-
-   AI
-
-================================= */
-
-function calculateAI(
-    price
-) {
-
-
-    /*
-    数据不足
-    */
-
-    if (
-        prices.length < 20
-    ) {
-
-
-        document.getElementById(
-            "score"
-        ).innerText =
-            "数据积累中";
-
-
-        document.getElementById(
-            "signal"
-        ).innerText =
-            "WAIT";
-
-
-        return;
-
-    }
-
-
-    /*
-    EMA
-    */
-
-    const ema20 =
-        calculateEMA(
-            prices,
-            20
-        );
-
-
-    const ema50 =
-        calculateEMA(
-            prices,
-            50
-        );
-
-
-    /*
-    RSI
-    */
-
-    const rsi =
-        calculateRSI(
-            prices,
-            14
-        );
-
-
-    /*
-    MACD
-    */
-
-    const macdData =
-        calculateMACD(
-            prices
-        );
-
-
-    /*
-    动量
-
-    使用最近价格
-    */
-
-    const previous =
-        prices[
-            prices.length - 2
-        ];
-
-
-    const momentum =
-        price -
-        previous;
-
-
-    /*
-    =============================
-
-    AI SCORE
-
-    =============================
-    */
-
-
-    let buyScore = 50;
-
-    let sellScore = 50;
-
-
-    /*
-    EMA趋势
-    */
-
-    if (
-        price > ema20
-    ) {
-
-        buyScore += 10;
-
-    }
-
-    else {
-
-        sellScore += 10;
-
-    }
-
-
-    if (
-        ema20 > ema50
-    ) {
-
-        buyScore += 10;
-
-    }
-
-    else {
-
-        sellScore += 10;
-
-    }
-
-
-    /*
-    RSI
-    */
-
-    if (
-        rsi > 50 &&
-        rsi < 70
-    ) {
-
-        buyScore += 10;
-
-    }
-
-    if (
-        rsi < 50 &&
-        rsi > 30
-    ) {
-
-        sellScore += 10;
-
-    }
-
-
-    /*
-    动量
-    */
-
-    if (
-        momentum > 0
-    ) {
-
-        buyScore += 10;
-
-    }
-
-    else if (
-        momentum < 0
-    ) {
-
-        sellScore += 10;
-
-    }
-
-
-    /*
-    MACD
-    */
-
-    if (
-        macdData.macd >
-        macdData.signal
-    ) {
-
-        buyScore += 10;
-
-    }
-
-    else {
-
-        sellScore += 10;
-
-    }
-
-
-    /*
-    限制 0-100
-    */
-
-    buyScore =
-        Math.min(
-            100,
-            buyScore
-        );
-
-
-    sellScore =
-        Math.min(
-            100,
-            sellScore
-        );
-
-
-    /*
-    最终评分
-    */
-
-    let score;
-
-    let direction;
-
-
-    if (
-        buyScore >
-        sellScore
-    ) {
-
-        score =
-            buyScore;
-
-    }
-
-    else {
-
-        score =
-            sellScore;
-
-    }
-
-
-    /*
-    信号阈值
-
-    80以上才 BUY/SELL
-    */
-
-    if (
-        buyScore >= 80 &&
-        buyScore > sellScore
-    ) {
-
-        direction =
-            "BUY";
-
-    }
-
-    else if (
-        sellScore >= 80 &&
-        sellScore > buyScore
-    ) {
-
-        direction =
-            "SELL";
-
-    }
-
-    else {
-
-        direction =
-            "WAIT";
-
-    }
-
-
-    /*
-    =============================
-
-    更新页面
-
-    =============================
-    */
-
-
-    document.getElementById(
-        "score"
-    ).innerText =
-        score +
-        "/100";
-
-
-    document.getElementById(
-        "ema20"
-    ).innerText =
-        ema20.toFixed(2);
-
-
-    document.getElementById(
-        "ema50"
-    ).innerText =
-        ema50.toFixed(2);
-
-
-    document.getElementById(
-        "rsi"
-    ).innerText =
-        rsi.toFixed(1);
-
-
-    document.getElementById(
-        "momentum"
-    ).innerText =
-        momentum >= 0
-        ? "↑ 多"
-        : "↓ 空";
-
-
-    /*
-    MACD显示
-    */
-
-    document.getElementById(
-        "macd"
-    ).innerText =
-
-        macdData.macd >
-        macdData.signal
-
-        ? "金叉 ↑"
-
-        : "死叉 ↓";
-
-
-    /*
-    趋势
-    */
-
-    document.getElementById(
-        "trend"
-    ).innerText =
-
-        ema20 > ema50
-
-        ? "多头 ↑"
-
-        : "空头 ↓";
-
-
-    /*
-    动量
-    */
-
-    document.getElementById(
-        "momentum2"
-    ).innerText =
-
-        momentum > 0
-
-        ? "上涨 ↑"
-
-        : "下跌 ↓";
-
-
-    /*
-    RSI状态
-    */
-
-    let rsiState;
-
-
-    if (
-        rsi >= 70
-    ) {
-
-        rsiState =
-            "偏超买";
-
-    }
-
-    else if (
-        rsi <= 30
-    ) {
-
-        rsiState =
-            "偏超卖";
-
-    }
-
-    else if (
-        rsi > 50
-    ) {
-
-        rsiState =
-            "偏多";
-
-    }
-
-    else {
-
-        rsiState =
-            "偏空";
-
-    }
-
-
-    document.getElementById(
-        "rsiState"
-    ).innerText =
-        rsiState;
-
-
-    /*
-    MACD状态
-    */
-
-    document.getElementById(
-        "macdState"
-    ).innerText =
-
-        macdData.macd >
-        macdData.signal
-
-        ? "多头"
-
-        : "空头";
-
-
-    /*
-    方向
-    */
-
-    document.getElementById(
-        "direction"
-    ).innerText =
-        direction;
-
-
-    /*
-    信号样式
-    */
-
-    const signal =
-        document.getElementById(
-            "signal"
-        );
-
-
-    signal.className =
-        "signal";
-
-
-    if (
-        direction === "BUY"
-    ) {
-
-
-        signal.innerText =
-            "🟢 BUY";
-
-
-        signal.classList.add(
-            "buy"
-        );
-
-
-    }
-
-    else if (
-        direction === "SELL"
-    ) {
-
-
-        signal.innerText =
-            "🔴 SELL";
-
-
-        signal.classList.add(
-            "sell"
-        );
-
-
-    }
-
-    else {
-
-
-        signal.innerText =
-            "⚪ WAIT";
-
-
-        signal.classList.add(
-            "wait"
+        setInterval(
+            fetchLivePrice,
+            CONFIG.refreshMs
         );
 
     }
-
-
-    /*
-    =============================
-
-    模拟 Entry / SL / TP
-
-    =============================
-    */
-
-    let entry =
-        price;
-
-
-    /*
-    当前版本暂时使用
-    固定分析距离。
-
-    不是实际交易订单。
-    */
-
-
-    if (
-        direction === "BUY"
-    ) {
-
-
-        const sl =
-            entry - 8;
-
-
-        const tp =
-            entry + 16;
-
-
-        document.getElementById(
-            "entry"
-        ).innerText =
-            entry.toFixed(2);
-
-
-        document.getElementById(
-            "sl"
-        ).innerText =
-            sl.toFixed(2);
-
-
-        document.getElementById(
-            "tp"
-        ).innerText =
-            tp.toFixed(2);
-
-
-    }
-
-    else if (
-        direction === "SELL"
-    ) {
-
-
-        const sl =
-            entry + 8;
-
-
-        const tp =
-            entry - 16;
-
-
-        document.getElementById(
-            "entry"
-        ).innerText =
-            entry.toFixed(2);
-
-
-        document.getElementById(
-            "sl"
-        ).innerText =
-            sl.toFixed(2);
-
-
-        document.getElementById(
-            "tp"
-        ).innerText =
-            tp.toFixed(2);
-
-
-    }
-
-    else {
-
-
-        document.getElementById(
-            "entry"
-        ).innerText =
-            "--";
-
-
-        document.getElementById(
-            "sl"
-        ).innerText =
-            "--";
-
-
-        document.getElementById(
-            "tp"
-        ).innerText =
-            "--";
-
-    }
-
-}
-
-
-/* =================================
-
-   API状态
-
-================================= */
-
-function setStatus(
-    online,
-    text
-) {
-
-
-    const status =
-        document.getElementById(
-            "apiStatus"
-        );
-
-
-    const dot =
-        document.getElementById(
-            "statusDot"
-        );
-
-
-    status.innerText =
-        text;
-
-
-    if (online) {
-
-
-        status.className =
-            "green";
-
-
-        dot.style.background =
-            "#22c55e";
-
-
-    }
-
-    else {
-
-
-        status.className =
-            "red";
-
-
-        dot.style.background =
-            "#ef4444";
-
-    }
-
-}
-
-
-/* =================================
-
-   初始化
-
-================================= */
-
-loadGoldPrice();
-
-
-/*
-每10秒更新
-
-*/
-
-setInterval(
-    loadGoldPrice,
-    10000
 );
-
 
 </script>
 
-
 </body>
-
 </html>
