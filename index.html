@@ -3,26 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI GOLD V1.5</title>
+<title>AI GOLD V1.6</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
     margin:0;
     background:#070d1b;
     color:#fff;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
 }
+
 .container{
     width:100%;
     max-width:920px;
     margin:auto;
     padding:18px 13px 50px
 }
-.header{text-align:center;padding:8px 0 24px}
+
+.header{
+    text-align:center;
+    padding:8px 0 24px
+}
+
 .logo{font-size:46px}
 .title{font-size:34px;font-weight:900}
 .subtitle{color:#8995ad;font-size:13px;margin-top:6px}
+
 .card{
     background:#141d36;
     border-radius:21px;
@@ -30,15 +38,22 @@ body{
     margin-bottom:15px;
     box-shadow:0 7px 24px rgba(0,0,0,.18)
 }
-.price-title{text-align:center;color:#9da8bd}
+
+.price-title{
+    text-align:center;
+    color:#9da8bd
+}
+
 .price{
     text-align:center;
     font-size:53px;
     font-weight:900;
     margin:10px 0
 }
+
 .change{text-align:center;font-size:14px}
 .update{text-align:center;color:#6d7890;font-size:11px;margin-top:7px}
+
 .badge{
     display:block;
     width:max-content;
@@ -48,17 +63,20 @@ body{
     font-size:11px;
     font-weight:900
 }
+
 .real{background:#0d412d;color:#35dc8c}
 .demo{background:#453916;color:#f3ca4d}
 .error{background:#471c27;color:#ff6979}
 
 .signal-card{text-align:center}
 .signal-title{color:#a0aabe}
+
 .signal{
     font-size:44px;
     font-weight:900;
     margin:13px 0
 }
+
 .buy{color:#35dc8c}
 .sell{color:#ff6070}
 .wait{color:#c2c9d5}
@@ -69,26 +87,40 @@ body{
     background:#29334c;
     overflow:hidden
 }
+
 .score-bar{
     width:50%;
     height:100%;
-    background:linear-gradient(90deg,#ff5f70,#f1c94d,#35dc8c);
+    background:linear-gradient(
+        90deg,
+        #ff5f70,
+        #f1c94d,
+        #35dc8c
+    );
     transition:.4s
 }
-.score-text{color:#aab4c8;font-size:13px;margin-top:9px}
+
+.score-text{
+    color:#aab4c8;
+    font-size:13px;
+    margin-top:9px
+}
 
 .section-title{
     font-size:19px;
     font-weight:900;
     margin-bottom:13px
 }
+
 .row{
     display:flex;
     justify-content:space-between;
     padding:11px 0;
     border-bottom:1px solid #29344c
 }
+
 .row:last-child{border-bottom:0}
+
 .label{color:#99a4ba}
 .value{font-weight:800}
 
@@ -101,16 +133,95 @@ body{
     grid-template-columns:1fr 1fr;
     gap:11px
 }
+
 .trade-box{
     background:#0c1428;
     border-radius:14px;
     padding:14px
 }
-.trade-label{color:#8995ab;font-size:12px}
+
+.trade-label{
+    color:#8995ab;
+    font-size:12px
+}
+
 .trade-value{
     font-size:19px;
     font-weight:900;
     margin-top:6px
+}
+
+/* ENTRY STATUS */
+
+.entry-status{
+    text-align:center;
+    border-radius:17px;
+    padding:20px 15px;
+    margin-bottom:16px;
+    background:#0c1428;
+    border:1px solid #293653
+}
+
+.entry-icon{
+    font-size:38px;
+    margin-bottom:5px
+}
+
+.entry-main{
+    font-size:25px;
+    font-weight:900
+}
+
+.entry-sub{
+    color:#9ba6ba;
+    font-size:13px;
+    margin-top:7px;
+    line-height:1.6
+}
+
+.entry-ready{
+    border-color:#1f9d68;
+    background:linear-gradient(
+        135deg,
+        rgba(24,132,87,.18),
+        #0c1428
+    )
+}
+
+.entry-ready .entry-main{
+    color:#35dc8c
+}
+
+.entry-pullback{
+    border-color:#9b7b20;
+    background:linear-gradient(
+        135deg,
+        rgba(155,123,32,.16),
+        #0c1428
+    )
+}
+
+.entry-pullback .entry-main{
+    color:#f2ca4d
+}
+
+.entry-no{
+    border-color:#71303d;
+    background:linear-gradient(
+        135deg,
+        rgba(113,48,61,.16),
+        #0c1428
+    )
+}
+
+.entry-no .entry-main{
+    color:#ff6070
+}
+
+.entry-distance{
+    margin-top:12px;
+    color:#c5ccda;
+    font-size:13px
 }
 
 .stats{
@@ -118,36 +229,50 @@ body{
     grid-template-columns:repeat(4,1fr);
     gap:9px
 }
+
 .stat{
     background:#0c1428;
     border-radius:13px;
     padding:12px 7px;
     text-align:center
 }
-.stat-number{font-size:22px;font-weight:900}
-.stat-label{font-size:11px;color:#8995ab;margin-top:4px}
+
+.stat-number{
+    font-size:22px;
+    font-weight:900
+}
+
+.stat-label{
+    font-size:11px;
+    color:#8995ab;
+    margin-top:4px
+}
 
 .table-wrap{
     overflow-x:auto;
     border-radius:12px
 }
+
 table{
     width:100%;
     border-collapse:collapse;
     min-width:680px;
     font-size:12px
 }
+
 th{
     color:#8d99af;
     background:#0c1428;
     padding:11px 7px;
     text-align:center
 }
+
 td{
     padding:11px 7px;
     border-bottom:1px solid #29344c;
     text-align:center
 }
+
 .open{color:#f2ca4d}
 .win{color:#35dc8c;font-weight:900}
 .loss{color:#ff6070;font-weight:900}
@@ -163,6 +288,7 @@ button{
     font-size:15px;
     font-weight:900
 }
+
 button:hover{background:#344363}
 button:active{transform:scale(.98)}
 
@@ -176,6 +302,7 @@ input{
     outline:none;
     margin-top:7px
 }
+
 .status{
     text-align:center;
     color:#8e99ae;
@@ -183,17 +310,20 @@ input{
     line-height:1.6;
     margin-top:12px
 }
+
 .info{
     color:#f2ca4d;
     font-size:12px;
     line-height:1.8
 }
+
 .footer{
     text-align:center;
     color:#59647b;
     font-size:10px;
     margin-top:18px
 }
+
 .empty{
     text-align:center;
     color:#6f7b91;
@@ -216,30 +346,46 @@ input{
 <div class="header">
     <div class="logo">🤖</div>
     <div class="title">AI GOLD</div>
-    <div class="subtitle">V1.5 · XAUUSD · SIGNAL RECORDER</div>
+    <div class="subtitle">V1.6 · XAUUSD · ENTRY SIGNAL SYSTEM</div>
 </div>
 
 
 <!-- PRICE -->
+
 <div class="card">
-    <div class="price-title">XAU/USD 黄金现货参考价格</div>
+
+    <div class="price-title">
+        XAU/USD 黄金现货参考价格
+    </div>
 
     <div id="price" class="price">----</div>
 
-    <div id="change" class="change">等待行情</div>
+    <div id="change" class="change">
+        等待行情
+    </div>
 
-    <div id="update" class="update">尚未更新</div>
+    <div id="update" class="update">
+        尚未更新
+    </div>
 
-    <span id="mode" class="badge real">REAL</span>
+    <span id="mode" class="badge real">
+        REAL
+    </span>
+
 </div>
 
 
 <!-- AI SIGNAL -->
+
 <div class="card signal-card">
 
-    <div class="signal-title">AI 综合评分</div>
+    <div class="signal-title">
+        AI 综合评分
+    </div>
 
-    <div id="signal" class="signal wait">WAIT</div>
+    <div id="signal" class="signal wait">
+        WAIT
+    </div>
 
     <div class="score">
         <div id="scoreBar" class="score-bar"></div>
@@ -248,13 +394,48 @@ input{
     <div id="scoreText" class="score-text">
         等待行情数据
     </div>
+
+</div>
+
+
+<!-- ENTRY STATUS -->
+
+<div class="card">
+
+    <div class="section-title">
+        🎯 ENTRY STATUS
+    </div>
+
+    <div id="entryStatus" class="entry-status entry-no">
+
+        <div id="entryIcon" class="entry-icon">
+            🔴
+        </div>
+
+        <div id="entryMain" class="entry-main">
+            NO ENTRY
+        </div>
+
+        <div id="entrySub" class="entry-sub">
+            等待有效 BUY / SELL 信号
+        </div>
+
+        <div id="entryDistance" class="entry-distance">
+            距离 Entry：--
+        </div>
+
+    </div>
+
 </div>
 
 
 <!-- TECHNICAL -->
+
 <div class="card">
 
-    <div class="section-title">📊 技术分析</div>
+    <div class="section-title">
+        📊 技术分析
+    </div>
 
     <div class="row">
         <span class="label">当前价格</span>
@@ -300,15 +481,20 @@ input{
 
 
 <!-- TRADE PLAN -->
+
 <div class="card">
 
-    <div class="section-title">🎯 AI 交易计划</div>
+    <div class="section-title">
+        🎯 AI 交易计划
+    </div>
 
     <div class="grid">
 
         <div class="trade-box">
             <div class="trade-label">方向</div>
-            <div id="direction" class="trade-value">WAIT</div>
+            <div id="direction" class="trade-value">
+                WAIT
+            </div>
         </div>
 
         <div class="trade-box">
@@ -337,13 +523,17 @@ input{
         </div>
 
     </div>
+
 </div>
 
 
 <!-- PERFORMANCE -->
+
 <div class="card">
 
-    <div class="section-title">📈 SIGNAL PERFORMANCE</div>
+    <div class="section-title">
+        📈 SIGNAL PERFORMANCE
+    </div>
 
     <div class="stats">
 
@@ -397,16 +587,17 @@ input{
 
 
 <!-- HISTORY -->
+
 <div class="card">
 
-    <div class="section-title">📋 SIGNAL HISTORY</div>
+    <div class="section-title">
+        📋 SIGNAL HISTORY
+    </div>
 
     <div id="historyContainer">
-
         <div class="empty">
             暂时没有交易信号
         </div>
-
     </div>
 
     <button onclick="clearSignals()">
@@ -417,11 +608,16 @@ input{
 
 
 <!-- SETTINGS -->
+
 <div class="card">
 
-    <div class="section-title">⚙️ 行情设置</div>
+    <div class="section-title">
+        ⚙️ 行情设置
+    </div>
 
-    <div class="label">Gold API Endpoint</div>
+    <div class="label">
+        Gold API Endpoint
+    </div>
 
     <input
         id="api"
@@ -447,9 +643,13 @@ input{
 </div>
 
 
+<!-- INFO -->
+
 <div class="card">
 
-    <div class="section-title">⚠️ 系统说明</div>
+    <div class="section-title">
+        ⚠️ 系统说明
+    </div>
 
     <div class="info">
 
@@ -457,17 +657,33 @@ input{
 
         <br><br>
 
-        信号记录器会在 BUY / SELL 出现时建立一个 OPEN 记录。
+        🟢 READY TO ENTER：
+        当前价格接近系统计算的 Entry 区域。
 
         <br><br>
 
-        如果之后价格触及 TP1 或 TP2，记录为 WIN。
+        🟡 WAIT FOR PULLBACK：
+        信号方向存在，但当前价格已经距离 Entry 较远，
+        避免直接追价。
 
+        <br><br>
+
+        🔴 NO ENTRY：
+        当前没有有效进场条件。
+
+        <br><br>
+
+        信号记录器会在 BUY / SELL 出现时建立 OPEN 记录。
+
+        <br><br>
+
+        如果之后价格触及 TP1，记录为 WIN；
         如果之后价格触及 SL，记录为 LOSS。
 
         <br><br>
 
-        当前版本使用每 5 秒价格采样，不等同于真正的 M1 / M5 OHLC K线。
+        当前版本使用每 5 秒价格采样，
+        不等同于真正的 M1 / M5 OHLC K线。
 
         <br><br>
 
@@ -479,7 +695,7 @@ input{
 
 
 <div class="footer">
-    AI GOLD V1.5 · SIGNAL RECORDER · XAUUSD
+    AI GOLD V1.6 · ENTRY SIGNAL SYSTEM · XAUUSD
 </div>
 
 </div>
@@ -493,26 +709,31 @@ input{
 
 const CONFIG = {
 
-    refreshMs:5000,
+    refreshMs: 5000,
 
-    maxHistory:300,
+    maxHistory: 300,
 
-    minimumData:20,
+    minimumData: 20,
 
-    atrPeriod:14,
+    atrPeriod: 14,
 
-    slATR:1.5,
+    slATR: 1.5,
 
-    tp1ATR:1.5,
+    tp1ATR: 1.5,
 
-    tp2ATR:3,
+    tp2ATR: 3,
 
-    priceStorage:"AI_GOLD_V15_PRICES",
+    /*
+       当前价格距离 Entry 不超过 0.15%
+       才显示 READY TO ENTER。
+    */
+    entryTolerancePct: 0.15,
 
-    signalStorage:"AI_GOLD_V15_SIGNALS",
+    priceStorage: "AI_GOLD_V16_PRICES",
 
-    maxSignals:100
+    signalStorage: "AI_GOLD_V16_SIGNALS",
 
+    maxSignals: 100
 };
 
 
@@ -520,17 +741,14 @@ const CONFIG = {
    STATE
 ===================================================== */
 
-let prices=[];
+let prices = [];
+let signals = [];
 
-let signals=[];
+let currentPrice = null;
+let previousPrice = null;
+let currentSignal = "WAIT";
 
-let currentPrice=null;
-
-let previousPrice=null;
-
-let currentSignal="WAIT";
-
-let demoMode=false;
+let demoMode = false;
 
 
 /* =====================================================
@@ -548,7 +766,7 @@ function $(id){
 
 function fmt(value,digits=2){
 
-    const n=Number(value);
+    const n = Number(value);
 
     if(!Number.isFinite(n)){
         return "--";
@@ -559,28 +777,27 @@ function fmt(value,digits=2){
 
 
 /* =====================================================
-   LOAD DATA
+   LOAD
 ===================================================== */
 
 function loadData(){
 
     try{
 
-        const p=
-            localStorage.getItem(
-                CONFIG.priceStorage
-            );
+        const p = localStorage.getItem(
+            CONFIG.priceStorage
+        );
 
         if(p){
 
-            const data=JSON.parse(p);
+            const data = JSON.parse(p);
 
             if(Array.isArray(data)){
 
-                prices=data
+                prices = data
                     .map(Number)
                     .filter(
-                        n=>Number.isFinite(n)&&n>0
+                        n => Number.isFinite(n) && n > 0
                     )
                     .slice(-CONFIG.maxHistory);
 
@@ -589,35 +806,33 @@ function loadData(){
 
     }catch(e){
 
-        prices=[];
+        prices = [];
 
     }
 
 
     try{
 
-        const s=
-            localStorage.getItem(
-                CONFIG.signalStorage
-            );
+        const s = localStorage.getItem(
+            CONFIG.signalStorage
+        );
 
         if(s){
 
-            const data=JSON.parse(s);
+            const data = JSON.parse(s);
 
             if(Array.isArray(data)){
 
-                signals=data.slice(
+                signals = data.slice(
                     -CONFIG.maxSignals
                 );
 
             }
-
         }
 
     }catch(e){
 
-        signals=[];
+        signals = [];
 
     }
 
@@ -661,38 +876,38 @@ function EMA(data,period){
         return null;
     }
 
-    const actual=Math.min(
+    const actual = Math.min(
         period,
         data.length
     );
 
-    const start=data.length-actual;
+    const start = data.length - actual;
 
-    let ema=0;
+    let ema = 0;
 
     for(
-        let i=start;
-        i<data.length;
+        let i = start;
+        i < data.length;
         i++
     ){
 
-        ema+=data[i];
+        ema += data[i];
 
     }
 
-    ema/=actual;
+    ema /= actual;
 
-    const k=2/(period+1);
+    const k = 2 / (period + 1);
 
     for(
-        let i=start+1;
-        i<data.length;
+        let i = start + 1;
+        i < data.length;
         i++
     ){
 
-        ema=
-            data[i]*k+
-            ema*(1-k);
+        ema =
+            data[i] * k +
+            ema * (1 - k);
 
     }
 
@@ -706,58 +921,55 @@ function EMA(data,period){
 
 function RSI(data,period=14){
 
-    if(data.length<2){
+    if(data.length < 2){
         return null;
     }
 
-    const actual=Math.min(
+    const actual = Math.min(
         period,
-        data.length-1
+        data.length - 1
     );
 
-    const start=data.length-actual;
+    const start = data.length - actual;
 
-    let gain=0;
-
-    let loss=0;
+    let gain = 0;
+    let loss = 0;
 
     for(
-        let i=start;
-        i<data.length;
+        let i = start;
+        i < data.length;
         i++
     ){
 
-        const change=
-            data[i]-data[i-1];
+        const change =
+            data[i] - data[i-1];
 
-        if(change>0){
+        if(change > 0){
 
-            gain+=change;
+            gain += change;
 
         }else{
 
-            loss+=Math.abs(change);
+            loss += Math.abs(change);
 
         }
 
     }
 
-    const avgGain=gain/actual;
+    const avgGain = gain / actual;
+    const avgLoss = loss / actual;
 
-    const avgLoss=loss/actual;
+    if(avgLoss === 0){
 
-    if(avgLoss===0){
-
-        return avgGain===0
-            ?50
-            :100;
+        return avgGain === 0
+            ? 50
+            : 100;
 
     }
 
-    const rs=
-        avgGain/avgLoss;
+    const rs = avgGain / avgLoss;
 
-    return 100-100/(1+rs);
+    return 100 - 100 / (1 + rs);
 }
 
 
@@ -767,22 +979,21 @@ function RSI(data,period=14){
 
 function MACD(data){
 
-    if(data.length<3){
+    if(data.length < 3){
         return null;
     }
 
-    const fast=EMA(data,12);
-
-    const slow=EMA(data,26);
+    const fast = EMA(data,12);
+    const slow = EMA(data,26);
 
     if(
-        fast===null||
-        slow===null
+        fast === null ||
+        slow === null
     ){
         return null;
     }
 
-    return fast-slow;
+    return fast - slow;
 }
 
 
@@ -792,12 +1003,14 @@ function MACD(data){
 
 function Momentum(data){
 
-    if(data.length<6){
+    if(data.length < 6){
         return null;
     }
 
-    return data[data.length-1]-
-           data[data.length-6];
+    return (
+        data[data.length-1] -
+        data[data.length-6]
+    );
 }
 
 
@@ -807,27 +1020,27 @@ function Momentum(data){
 
 function ATR(data,period=14){
 
-    if(data.length<2){
+    if(data.length < 2){
         return null;
     }
 
-    const ranges=[];
+    const ranges = [];
 
     for(
-        let i=1;
-        i<data.length;
+        let i = 1;
+        i < data.length;
         i++
     ){
 
         ranges.push(
             Math.abs(
-                data[i]-data[i-1]
+                data[i] - data[i-1]
             )
         );
 
     }
 
-    const recent=ranges.slice(
+    const recent = ranges.slice(
         -Math.min(
             period,
             ranges.length
@@ -839,31 +1052,31 @@ function ATR(data,period=14){
     }
 
     return recent.reduce(
-        (a,b)=>a+b,
+        (a,b) => a + b,
         0
-    )/recent.length;
+    ) / recent.length;
 }
 
 
 /* =====================================================
-   API PRICE PARSER
+   API PARSER
 ===================================================== */
 
 function parsePrice(data){
 
-    if(typeof data==="number"){
+    if(typeof data === "number"){
         return Number(data);
     }
 
-    if(typeof data==="string"){
+    if(typeof data === "string"){
         return Number(data);
     }
 
-    if(!data||typeof data!=="object"){
+    if(!data || typeof data !== "object"){
         return null;
     }
 
-    const values=[
+    const values = [
 
         data.price,
         data.ask,
@@ -879,11 +1092,11 @@ function parsePrice(data){
 
     for(const value of values){
 
-        const n=Number(value);
+        const n = Number(value);
 
         if(
-            Number.isFinite(n)&&
-            n>0
+            Number.isFinite(n) &&
+            n > 0
         ){
 
             return n;
@@ -897,32 +1110,119 @@ function parsePrice(data){
 
 
 /* =====================================================
+   ENTRY STATUS
+===================================================== */
+
+function updateEntryStatus(
+    signal,
+    price,
+    entry
+){
+
+    const box = $("entryStatus");
+    const icon = $("entryIcon");
+    const main = $("entryMain");
+    const sub = $("entrySub");
+    const distanceEl = $("entryDistance");
+
+
+    box.className =
+        "entry-status entry-no";
+
+
+    if(
+        !Number.isFinite(price) ||
+        !Number.isFinite(entry) ||
+        signal === "WAIT"
+    ){
+
+        icon.textContent = "🔴";
+
+        main.textContent = "NO ENTRY";
+
+        sub.textContent =
+            "等待有效 BUY / SELL 信号";
+
+        distanceEl.textContent =
+            "距离 Entry：--";
+
+        return;
+
+    }
+
+
+    const distancePct =
+        Math.abs(
+            price - entry
+        ) / entry * 100;
+
+
+    distanceEl.textContent =
+        "距离 Entry：" +
+        fmt(distancePct,3) +
+        "%";
+
+
+    if(
+        distancePct <=
+        CONFIG.entryTolerancePct
+    ){
+
+        box.className =
+            "entry-status entry-ready";
+
+        icon.textContent = "🟢";
+
+        main.textContent =
+            "READY TO ENTER";
+
+        sub.textContent =
+            signal +
+            " · 当前价格接近 Entry 区域";
+
+    }else{
+
+        box.className =
+            "entry-status entry-pullback";
+
+        icon.textContent = "🟡";
+
+        main.textContent =
+            "WAIT FOR PULLBACK";
+
+        sub.textContent =
+            signal +
+            " 信号仍在，但当前价格距离 Entry 较远，不建议追价";
+
+    }
+
+}
+
+
+/* =====================================================
    UPDATE PRICE
 ===================================================== */
 
 function updatePrice(price){
 
-    price=Number(price);
+    price = Number(price);
 
     if(
-        !Number.isFinite(price)||
-        price<=0
+        !Number.isFinite(price) ||
+        price <= 0
     ){
 
-        throw new Error(
-            "价格无效"
-        );
+        throw new Error("价格无效");
 
     }
 
-    previousPrice=currentPrice;
-
-    currentPrice=price;
+    previousPrice = currentPrice;
+    currentPrice = price;
 
     prices.push(price);
 
     if(
-        prices.length>
+        prices.length >
         CONFIG.maxHistory
     ){
 
@@ -932,42 +1232,46 @@ function updatePrice(price){
 
     saveData();
 
-    $("price").textContent=
+
+    $("price").textContent =
         fmt(price);
 
-    $("techPrice").textContent=
+    $("techPrice").textContent =
         fmt(price);
 
-    if(previousPrice!==null){
 
-        const diff=
-            price-previousPrice;
+    if(previousPrice !== null){
 
-        const pct=
-            previousPrice!==0
-                ?diff/previousPrice*100
-                :0;
+        const diff =
+            price - previousPrice;
 
-        $("change").textContent=
-            (diff>=0?"↑ ":"↓ ")+
-            fmt(diff)+
-            " ("+
-            fmt(pct,3)+
+        const pct =
+            previousPrice !== 0
+                ? diff / previousPrice * 100
+                : 0;
+
+        $("change").textContent =
+            (diff >= 0 ? "↑ " : "↓ ") +
+            fmt(diff) +
+            " (" +
+            fmt(pct,3) +
             "%)";
 
-        $("change").className=
-            "change "+
+        $("change").className =
+            "change " +
             (
-                diff>=0
-                    ?"green"
-                    :"red"
+                diff >= 0
+                    ? "green"
+                    : "red"
             );
 
     }
 
-    $("update").textContent=
-        "最后更新："+new Date()
-        .toLocaleTimeString();
+
+    $("update").textContent =
+        "最后更新：" +
+        new Date().toLocaleTimeString();
+
 
     analyze();
 
@@ -987,54 +1291,57 @@ function updatePrice(price){
 function analyze(){
 
     if(
-        prices.length<
+        prices.length <
         CONFIG.minimumData
     ){
 
-        $("signal").textContent="WAIT";
+        $("signal").textContent = "WAIT";
 
-        $("signal").className=
+        $("signal").className =
             "signal wait";
 
-        $("direction").textContent="WAIT";
+        $("direction").textContent = "WAIT";
 
-        $("scoreBar").style.width="50%";
+        $("scoreBar").style.width = "50%";
 
-        $("scoreText").textContent=
-            "数据积累中："+prices.length+
-            " / "+CONFIG.minimumData;
+        $("scoreText").textContent =
+            "数据积累中：" +
+            prices.length +
+            " / " +
+            CONFIG.minimumData;
+
+        updateEntryStatus(
+            "WAIT",
+            currentPrice,
+            null
+        );
 
         return;
 
     }
 
 
-    const price=
+    const price =
         prices[prices.length-1];
 
-    const ema20=EMA(prices,20);
-
-    const ema50=EMA(prices,50);
-
-    const rsi=RSI(prices,14);
-
-    const macd=MACD(prices);
-
-    const momentum=Momentum(prices);
-
-    const atr=ATR(
+    const ema20 = EMA(prices,20);
+    const ema50 = EMA(prices,50);
+    const rsi = RSI(prices,14);
+    const macd = MACD(prices);
+    const momentum = Momentum(prices);
+    const atr = ATR(
         prices,
         CONFIG.atrPeriod
     );
 
 
     if(
-        ema20===null||
-        ema50===null||
-        rsi===null||
-        macd===null||
-        momentum===null||
-        atr===null
+        ema20 === null ||
+        ema50 === null ||
+        rsi === null ||
+        macd === null ||
+        momentum === null ||
+        atr === null
     ){
 
         return;
@@ -1042,262 +1349,289 @@ function analyze(){
     }
 
 
-    $("ema20").textContent=
+    $("ema20").textContent =
         fmt(ema20);
 
-    $("ema50").textContent=
+    $("ema50").textContent =
         fmt(ema50);
 
-    $("rsi").textContent=
+    $("rsi").textContent =
         fmt(rsi,1);
 
-    $("macd").textContent=
+    $("macd").textContent =
         fmt(macd,3);
 
-    $("atr").textContent=
+    $("atr").textContent =
         fmt(atr,2);
 
-    $("momentum").textContent=
+    $("momentum").textContent =
         fmt(momentum,2);
 
 
     /* SCORE */
 
-    let score=50;
+    let score = 50;
 
 
-    if(price>ema20){
-        score+=10;
+    if(price > ema20){
+        score += 10;
     }else{
-        score-=10;
+        score -= 10;
     }
 
 
-    if(ema20>ema50){
-        score+=15;
+    if(ema20 > ema50){
+        score += 15;
     }else{
-        score-=15;
+        score -= 15;
     }
 
 
     if(
-        rsi>=55&&
-        rsi<=70
+        rsi >= 55 &&
+        rsi <= 70
     ){
 
-        score+=10;
+        score += 10;
 
     }else if(
-        rsi<=45&&
-        rsi>=30
+        rsi <= 45 &&
+        rsi >= 30
     ){
 
-        score-=10;
+        score -= 10;
 
     }
 
 
-    if(macd>0){
-        score+=10;
+    if(macd > 0){
+        score += 10;
     }else{
-        score-=10;
+        score -= 10;
     }
 
 
-    if(momentum>0){
-        score+=5;
+    if(momentum > 0){
+        score += 5;
     }else{
-        score-=5;
+        score -= 5;
     }
 
 
-    score=Math.max(
+    score = Math.max(
         0,
         Math.min(100,score)
     );
 
 
-    $("scoreBar").style.width=
-        score+"%";
+    $("scoreBar").style.width =
+        score + "%";
 
-    $("scoreText").textContent=
-        "多头 "+score+
-        "% · 空头 "+
-        (100-score)+"%";
+    $("scoreText").textContent =
+        "多头 " +
+        score +
+        "% · 空头 " +
+        (100-score) +
+        "%";
 
 
-    let signal="WAIT";
+    let signal = "WAIT";
 
 
-    if(score>=70){
+    if(score >= 70){
 
-        signal="BUY";
+        signal = "BUY";
 
-    }else if(score<=30){
+    }else if(score <= 30){
 
-        signal="SELL";
+        signal = "SELL";
 
     }
 
 
-    $("signal").textContent=
+    $("signal").textContent =
         signal;
 
 
-    if(signal==="BUY"){
+    if(signal === "BUY"){
 
-        $("signal").className=
+        $("signal").className =
             "signal buy";
 
-    }else if(signal==="SELL"){
+    }else if(signal === "SELL"){
 
-        $("signal").className=
+        $("signal").className =
             "signal sell";
 
     }else{
 
-        $("signal").className=
+        $("signal").className =
             "signal wait";
 
     }
 
 
-    $("direction").textContent=
+    $("direction").textContent =
         signal;
 
 
-    if(signal==="BUY"){
+    if(signal === "BUY"){
 
-        $("direction").className=
+        $("direction").className =
             "trade-value green";
 
-    }else if(signal==="SELL"){
+    }else if(signal === "SELL"){
 
-        $("direction").className=
+        $("direction").className =
             "trade-value red";
 
     }else{
 
-        $("direction").className=
+        $("direction").className =
             "trade-value";
 
     }
 
 
-    let trend="震荡";
+    /* TREND */
+
+    let trend = "震荡";
 
 
     if(
-        price>ema20&&
-        ema20>ema50
+        price > ema20 &&
+        ema20 > ema50
     ){
 
-        trend="多头";
+        trend = "多头";
 
     }else if(
-        price<ema20&&
-        ema20<ema50
+        price < ema20 &&
+        ema20 < ema50
     ){
 
-        trend="空头";
+        trend = "空头";
 
     }
 
 
-    $("trend").textContent=
+    $("trend").textContent =
         trend;
 
-
-    $("trend").className=
-        "value "+
+    $("trend").className =
+        "value " +
         (
-            trend==="多头"
-                ?"green"
-                :trend==="空头"
-                    ?"red"
-                    :"yellow"
+            trend === "多头"
+                ? "green"
+                : trend === "空头"
+                    ? "red"
+                    : "yellow"
         );
 
 
     /* TRADE PLAN */
 
     if(
-        signal==="BUY"||
-        signal==="SELL"
+        signal === "BUY" ||
+        signal === "SELL"
     ){
 
-        const risk=
+        const risk =
             Math.max(
-                atr*CONFIG.slATR,
+                atr * CONFIG.slATR,
                 0.5
             );
 
-        const tp1Distance=
+        const tp1Distance =
             Math.max(
-                atr*CONFIG.tp1ATR,
+                atr * CONFIG.tp1ATR,
                 risk
             );
 
-        const tp2Distance=
+        const tp2Distance =
             Math.max(
-                atr*CONFIG.tp2ATR,
-                risk*2
+                atr * CONFIG.tp2ATR,
+                risk * 2
             );
 
-        let sl,tp1,tp2;
+
+        let sl;
+        let tp1;
+        let tp2;
 
 
-        if(signal==="BUY"){
+        if(signal === "BUY"){
 
-            sl=price-risk;
+            sl = price - risk;
 
-            tp1=price+tp1Distance;
+            tp1 =
+                price +
+                tp1Distance;
 
-            tp2=price+tp2Distance;
+            tp2 =
+                price +
+                tp2Distance;
 
         }else{
 
-            sl=price+risk;
+            sl = price + risk;
 
-            tp1=price-tp1Distance;
+            tp1 =
+                price -
+                tp1Distance;
 
-            tp2=price-tp2Distance;
+            tp2 =
+                price -
+                tp2Distance;
 
         }
 
 
-        $("entry").textContent=
-            fmt(price);
+        /*
+           当前系统 Entry = 当前价格。
+           因此 READY 会在当前价格附近显示。
+        */
 
-        $("sl").textContent=
+        const entry = price;
+
+
+        $("entry").textContent =
+            fmt(entry);
+
+        $("sl").textContent =
             fmt(sl);
 
-        $("tp1").textContent=
+        $("tp1").textContent =
             fmt(tp1);
 
-        $("tp2").textContent=
+        $("tp2").textContent =
             fmt(tp2);
 
-        $("rr").textContent=
-            "1 : "+
+        $("rr").textContent =
+            "1 : " +
             fmt(
-                tp2Distance/risk,
+                tp2Distance / risk,
                 1
             );
 
 
-        /*
-           NEW SIGNAL
-        */
+        updateEntryStatus(
+            signal,
+            price,
+            entry
+        );
+
+
+        /* NEW SIGNAL */
 
         if(
-            signal!=="WAIT"&&
-            signal!==currentSignal
+            signal !== "WAIT" &&
+            signal !== currentSignal
         ){
 
             createSignal(
                 signal,
-                price,
+                entry,
                 sl,
                 tp1,
                 tp2
@@ -1307,23 +1641,30 @@ function analyze(){
 
     }else{
 
-        $("entry").textContent="--";
-        $("sl").textContent="--";
-        $("tp1").textContent="--";
-        $("tp2").textContent="--";
-        $("rr").textContent="--";
+        $("entry").textContent = "--";
+        $("sl").textContent = "--";
+        $("tp1").textContent = "--";
+        $("tp2").textContent = "--";
+        $("rr").textContent = "--";
+
+
+        updateEntryStatus(
+            "WAIT",
+            price,
+            null
+        );
 
     }
 
 
-    currentSignal=signal;
+    currentSignal = signal;
 
 
     if(!demoMode){
 
-        $("status").textContent=
-            "🟢 REAL 行情 · "+
-            prices.length+
+        $("status").textContent =
+            "🟢 REAL 行情 · " +
+            prices.length +
             " 个价格数据";
 
     }
@@ -1343,21 +1684,14 @@ function createSignal(
     tp2
 ){
 
-    /*
-       避免同方向连续重复记录。
-
-       如果最近一条还是 OPEN
-       并且方向相同，则不创建新信号。
-    */
-
-    const last=
+    const last =
         signals[signals.length-1];
 
 
     if(
-        last&&
-        last.direction===direction&&
-        last.status==="OPEN"
+        last &&
+        last.direction === direction &&
+        last.status === "OPEN"
     ){
 
         return;
@@ -1365,28 +1699,28 @@ function createSignal(
     }
 
 
-    const signal={
+    const signal = {
 
-        id:Date.now(),
+        id: Date.now(),
 
-        time:new Date()
-            .toLocaleString(),
+        time:
+            new Date().toLocaleString(),
 
-        direction:direction,
+        direction: direction,
 
-        entry:Number(entry),
+        entry: Number(entry),
 
-        sl:Number(sl),
+        sl: Number(sl),
 
-        tp1:Number(tp1),
+        tp1: Number(tp1),
 
-        tp2:Number(tp2),
+        tp2: Number(tp2),
 
-        status:"OPEN",
+        status: "OPEN",
 
-        resultPrice:null,
+        resultPrice: null,
 
-        resultTime:null
+        resultTime: null
 
     };
 
@@ -1395,7 +1729,7 @@ function createSignal(
 
 
     if(
-        signals.length>
+        signals.length >
         CONFIG.maxSignals
     ){
 
@@ -1424,64 +1758,49 @@ function checkOpenSignals(){
     }
 
 
-    let changed=false;
+    let changed = false;
 
 
     for(const signal of signals){
 
-        if(signal.status!=="OPEN"){
+        if(signal.status !== "OPEN"){
             continue;
         }
 
 
-        /*
-           BUY:
-           先判断 SL，
-           再判断 TP。
-
-           SELL:
-           先判断 SL，
-           再判断 TP。
-
-           注意：
-           5 秒采样无法知道同一根价格跳动
-           内到底先碰到 SL 还是 TP。
-        */
-
-
         if(
-            signal.direction==="BUY"
+            signal.direction === "BUY"
         ){
 
             if(
-                currentPrice<=signal.sl
+                currentPrice <= signal.sl
             ){
 
-                signal.status="LOSS";
+                signal.status = "LOSS";
 
-                signal.resultPrice=
+                signal.resultPrice =
                     currentPrice;
 
-                signal.resultTime=
+                signal.resultTime =
                     new Date()
                     .toLocaleString();
 
-                changed=true;
+                changed = true;
 
             }else if(
-                currentPrice>=signal.tp1
+                currentPrice >= signal.tp1
             ){
 
-                signal.status="WIN";
+                signal.status = "WIN";
 
-                signal.resultPrice=
+                signal.resultPrice =
                     currentPrice;
 
-                signal.resultTime=
+                signal.resultTime =
                     new Date()
                     .toLocaleString();
 
-                changed=true;
+                changed = true;
 
             }
 
@@ -1489,38 +1808,38 @@ function checkOpenSignals(){
 
 
         if(
-            signal.direction==="SELL"
+            signal.direction === "SELL"
         ){
 
             if(
-                currentPrice>=signal.sl
+                currentPrice >= signal.sl
             ){
 
-                signal.status="LOSS";
+                signal.status = "LOSS";
 
-                signal.resultPrice=
+                signal.resultPrice =
                     currentPrice;
 
-                signal.resultTime=
+                signal.resultTime =
                     new Date()
                     .toLocaleString();
 
-                changed=true;
+                changed = true;
 
             }else if(
-                currentPrice<=signal.tp1
+                currentPrice <= signal.tp1
             ){
 
-                signal.status="WIN";
+                signal.status = "WIN";
 
-                signal.resultPrice=
+                signal.resultPrice =
                     currentPrice;
 
-                signal.resultTime=
+                signal.resultTime =
                     new Date()
                     .toLocaleString();
 
-                changed=true;
+                changed = true;
 
             }
 
@@ -1544,15 +1863,15 @@ function checkOpenSignals(){
 
 function renderHistory(){
 
-    const box=
+    const box =
         $("historyContainer");
 
 
     if(!signals.length){
 
-        box.innerHTML=
-            '<div class="empty">'+
-            '暂时没有交易信号'+
+        box.innerHTML =
+            '<div class="empty">' +
+            '暂时没有交易信号' +
             '</div>';
 
         return;
@@ -1560,88 +1879,104 @@ function renderHistory(){
     }
 
 
-    let html=
-        '<div class="table-wrap">'+
-        '<table>'+
-        '<thead>'+
-        '<tr>'+
-        '<th>时间</th>'+
-        '<th>方向</th>'+
-        '<th>Entry</th>'+
-        '<th>SL</th>'+
-        '<th>TP1</th>'+
-        '<th>结果</th>'+
-        '<th>结果价</th>'+
-        '</tr>'+
-        '</thead>'+
+    let html =
+        '<div class="table-wrap">' +
+        '<table>' +
+        '<thead>' +
+        '<tr>' +
+        '<th>时间</th>' +
+        '<th>方向</th>' +
+        '<th>Entry</th>' +
+        '<th>SL</th>' +
+        '<th>TP1</th>' +
+        '<th>结果</th>' +
+        '<th>结果价</th>' +
+        '</tr>' +
+        '</thead>' +
         '<tbody>';
 
 
-    const list=
-        [...signals]
-        .reverse();
+    const list =
+        [...signals].reverse();
 
 
     for(const s of list){
 
-        let statusClass="open";
+        let statusClass = "open";
+        let statusText = "🟡 OPEN";
 
-        let statusText="🟡 OPEN";
 
+        if(s.status === "WIN"){
 
-        if(s.status==="WIN"){
-
-            statusClass="win";
-
-            statusText="✅ WIN";
+            statusClass = "win";
+            statusText = "✅ WIN";
 
         }
 
 
-        if(s.status==="LOSS"){
+        if(s.status === "LOSS"){
 
-            statusClass="loss";
-
-            statusText="❌ LOSS";
+            statusClass = "loss";
+            statusText = "❌ LOSS";
 
         }
 
 
-        const directionClass=
-            s.direction==="BUY"
-                ?"green"
-                :"red";
+        const directionClass =
+            s.direction === "BUY"
+                ? "green"
+                : "red";
 
 
-        html+=
-            '<tr>'+
-            '<td>'+escapeHtml(s.time)+'</td>'+
-            '<td class="'+directionClass+'">'+
-                escapeHtml(s.direction)+
-            '</td>'+
-            '<td>'+fmt(s.entry)+'</td>'+
-            '<td>'+fmt(s.sl)+'</td>'+
-            '<td>'+fmt(s.tp1)+'</td>'+
-            '<td class="'+statusClass+'">'+
-                statusText+
-            '</td>'+
-            '<td>'+
-                (
-                    s.resultPrice!==null
-                        ?fmt(s.resultPrice)
-                        :"--"
-                )+
-            '</td>'+
+        html +=
+            '<tr>' +
+
+            '<td>' +
+            escapeHtml(s.time) +
+            '</td>' +
+
+            '<td class="' +
+            directionClass +
+            '">' +
+            escapeHtml(s.direction) +
+            '</td>' +
+
+            '<td>' +
+            fmt(s.entry) +
+            '</td>' +
+
+            '<td>' +
+            fmt(s.sl) +
+            '</td>' +
+
+            '<td>' +
+            fmt(s.tp1) +
+            '</td>' +
+
+            '<td class="' +
+            statusClass +
+            '">' +
+            statusText +
+            '</td>' +
+
+            '<td>' +
+            (
+                s.resultPrice !== null
+                    ? fmt(s.resultPrice)
+                    : "--"
+            ) +
+            '</td>' +
+
             '</tr>';
 
     }
 
 
-    html+=
+    html +=
         '</tbody></table></div>';
 
 
-    box.innerHTML=html;
+    box.innerHTML = html;
 
 }
 
@@ -1652,61 +1987,66 @@ function renderHistory(){
 
 function renderStats(){
 
-    const total=signals.length;
+    const total = signals.length;
 
-    const buy=signals.filter(
-        s=>s.direction==="BUY"
-    ).length;
+    const buy =
+        signals.filter(
+            s => s.direction === "BUY"
+        ).length;
 
-    const sell=signals.filter(
-        s=>s.direction==="SELL"
-    ).length;
+    const sell =
+        signals.filter(
+            s => s.direction === "SELL"
+        ).length;
 
-    const win=signals.filter(
-        s=>s.status==="WIN"
-    ).length;
+    const win =
+        signals.filter(
+            s => s.status === "WIN"
+        ).length;
 
-    const loss=signals.filter(
-        s=>s.status==="LOSS"
-    ).length;
+    const loss =
+        signals.filter(
+            s => s.status === "LOSS"
+        ).length;
 
-    const open=signals.filter(
-        s=>s.status==="OPEN"
-    ).length;
+    const open =
+        signals.filter(
+            s => s.status === "OPEN"
+        ).length;
 
-    const closed=win+loss;
+    const closed = win + loss;
 
-    const rate=
-        closed>0
-            ?win/closed*100
-            :null;
+    const rate =
+        closed > 0
+            ? win / closed * 100
+            : null;
 
 
-    $("totalSignals").textContent=
+    $("totalSignals").textContent =
         total;
 
-    $("buyCount").textContent=
+    $("buyCount").textContent =
         buy;
 
-    $("sellCount").textContent=
+    $("sellCount").textContent =
         sell;
 
-    $("winCount").textContent=
+    $("winCount").textContent =
         win;
 
-    $("lossCount").textContent=
+    $("lossCount").textContent =
         loss;
 
-    $("openCount").textContent=
+    $("openCount").textContent =
         open;
 
-    $("closedCount").textContent=
+    $("closedCount").textContent =
         closed;
 
-    $("winRate").textContent=
-        rate===null
-            ?"--"
-            :fmt(rate,1)+"%";
+    $("winRate").textContent =
+        rate === null
+            ? "--"
+            : fmt(rate,1) + "%";
 
 }
 
@@ -1733,16 +2073,17 @@ function escapeHtml(value){
 
 async function refreshPrice(){
 
-    demoMode=false;
+    demoMode = false;
 
 
-    $("mode").textContent="REAL";
+    $("mode").textContent =
+        "REAL";
 
-    $("mode").className=
+    $("mode").className =
         "badge real";
 
 
-    const url=
+    const url =
         $("api").value.trim();
 
 
@@ -1757,33 +2098,32 @@ async function refreshPrice(){
     }
 
 
-    $("status").textContent=
+    $("status").textContent =
         "连接 Gold API...";
 
 
     try{
 
-        const controller=
+        const controller =
             new AbortController();
 
 
-        const timeout=
+        const timeout =
             setTimeout(
-                ()=>{
+                () => {
                     controller.abort();
                 },
                 8000
             );
 
 
-        const response=
+        const response =
             await fetch(
                 url,
                 {
                     method:"GET",
                     cache:"no-store",
-                    signal:
-                        controller.signal
+                    signal:controller.signal
                 }
             );
 
@@ -1794,14 +2134,14 @@ async function refreshPrice(){
         if(!response.ok){
 
             throw new Error(
-                "HTTP "+
+                "HTTP " +
                 response.status
             );
 
         }
 
 
-        const data=
+        const data =
             await response.json();
 
 
@@ -1811,11 +2151,11 @@ async function refreshPrice(){
         );
 
 
-        const price=
+        const price =
             parsePrice(data);
 
 
-        if(price===null){
+        if(price === null){
 
             throw new Error(
                 "API 返回无法识别价格"
@@ -1846,14 +2186,15 @@ async function refreshPrice(){
 
 function showError(message){
 
-    $("mode").textContent=
+    $("mode").textContent =
         "ERROR";
 
-    $("mode").className=
+    $("mode").className =
         "badge error";
 
-    $("status").textContent=
-        "🔴 行情错误："+message;
+    $("status").textContent =
+        "🔴 行情错误：" +
+        message;
 
 }
 
@@ -1864,79 +2205,72 @@ function showError(message){
 
 function runDemo(){
 
-    demoMode=true;
+    demoMode = true;
 
 
-    $("mode").textContent="DEMO";
+    $("mode").textContent =
+        "DEMO";
 
-    $("mode").className=
+    $("mode").className =
         "badge demo";
 
 
-    /*
-       清除当前模拟价格，
-       但不清除已有信号历史。
-    */
+    prices = [];
 
-    prices=[];
+    currentPrice = null;
 
-    currentPrice=null;
+    previousPrice = null;
 
-    previousPrice=null;
-
-    currentSignal="WAIT";
+    currentSignal = "WAIT";
 
 
-    let price=4390;
+    let price = 4390;
 
-
-    /*
-       模拟上涨行情，
-       让系统产生 BUY。
-    */
 
     for(
-        let i=0;
-        i<150;
+        let i = 0;
+        i < 150;
         i++
     ){
 
-        const trend=i*0.06;
+        const trend = i * 0.06;
 
-        const wave=
-            Math.sin(i/6)*1.4;
+        const wave =
+            Math.sin(i / 6) * 1.4;
 
-        const random=
-            (Math.random()-.5)*.7;
+        const random =
+            (Math.random() - 0.5) * 0.7;
 
-        price+=
-            .08+
-            trend/100+
-            wave*.08+
+
+        price +=
+            0.08 +
+            trend / 100 +
+            wave * 0.08 +
             random;
+
 
         prices.push(price);
 
     }
 
 
-    currentPrice=
+    currentPrice =
         prices[prices.length-1];
 
-    previousPrice=
+    previousPrice =
         prices[prices.length-2];
 
 
-    $("price").textContent=
+    $("price").textContent =
         fmt(currentPrice);
 
-    $("techPrice").textContent=
+    $("techPrice").textContent =
         fmt(currentPrice);
 
-    $("change").textContent=
+    $("change").textContent =
         "🧪 DEMO 测试数据";
 
-    $("update").textContent=
+    $("update").textContent =
         "测试模式";
 
 
@@ -1949,8 +2283,8 @@ function runDemo(){
     renderStats();
 
 
-    $("status").textContent=
-        "🟡 DEMO 模式 · AI + 记录器测试完成";
+    $("status").textContent =
+        "🟡 DEMO 模式 · AI + 入场系统测试完成";
 
 }
 
@@ -1972,7 +2306,7 @@ function clearSignals(){
     }
 
 
-    signals=[];
+    signals = [];
 
     saveData();
 
@@ -1981,7 +2315,7 @@ function clearSignals(){
     renderStats();
 
 
-    $("status").textContent=
+    $("status").textContent =
         "🟡 信号历史已清除";
 
 }
@@ -2004,15 +2338,15 @@ function clearAll(){
     }
 
 
-    prices=[];
+    prices = [];
 
-    signals=[];
+    signals = [];
 
-    currentPrice=null;
+    currentPrice = null;
 
-    previousPrice=null;
+    previousPrice = null;
 
-    currentSignal="WAIT";
+    currentSignal = "WAIT";
 
 
     localStorage.removeItem(
@@ -2024,26 +2358,37 @@ function clearAll(){
     );
 
 
-    $("price").textContent="----";
+    $("price").textContent = "----";
 
-    $("techPrice").textContent="--";
+    $("techPrice").textContent = "--";
 
-    $("change").textContent="等待行情";
+    $("change").textContent =
+        "等待行情";
 
-    $("update").textContent="尚未更新";
+    $("update").textContent =
+        "尚未更新";
 
-    $("signal").textContent="WAIT";
-
-    $("signal").className=
-        "signal wait";
-
-    $("direction").textContent=
+    $("signal").textContent =
         "WAIT";
 
-    $("scoreBar").style.width="50%";
+    $("signal").className =
+        "signal wait";
 
-    $("scoreText").textContent=
+    $("direction").textContent =
+        "WAIT";
+
+    $("scoreBar").style.width =
+        "50%";
+
+    $("scoreText").textContent =
         "历史数据已清除";
+
+
+    updateEntryStatus(
+        "WAIT",
+        null,
+        null
+    );
 
 
     renderHistory();
@@ -2051,7 +2396,7 @@ function clearAll(){
     renderStats();
 
 
-    $("status").textContent=
+    $("status").textContent =
         "🟡 全部数据已清除";
 
 }
@@ -2072,19 +2417,19 @@ function start(){
 
     if(prices.length){
 
-        currentPrice=
+        currentPrice =
             prices[prices.length-1];
 
-        previousPrice=
-            prices.length>1
-                ?prices[prices.length-2]
-                :null;
+        previousPrice =
+            prices.length > 1
+                ? prices[prices.length-2]
+                : null;
 
 
-        $("price").textContent=
+        $("price").textContent =
             fmt(currentPrice);
 
-        $("techPrice").textContent=
+        $("techPrice").textContent =
             fmt(currentPrice);
 
         analyze();
@@ -2092,20 +2437,12 @@ function start(){
     }
 
 
-    $("status").textContent=
-        "🟢 AI GOLD V1.5 已启动";
+    $("status").textContent =
+        "🟢 AI GOLD V1.6 已启动";
 
-
-    /*
-       立即获取一次 REAL 价格
-    */
 
     refreshPrice();
 
-
-    /*
-       每 5 秒自动更新
-    */
 
     setInterval(
         refreshPrice,
