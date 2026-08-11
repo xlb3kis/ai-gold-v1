@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI GOLD V1.0</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0b1020;
+    color: white;
+}
+.container {
+    max-width: 480px;
+    margin: auto;
+    padding: 18px;
+}
+.header {
+    text-align: center;
+    padding: 15px 0 20px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+.header p {
+    margin-top: 6px;
+    color: #9ca3af;
+}
+.card {
+    background: #151c32;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+.price {
+    text-align: center;
+}
+.price-label {
+    color: #9ca3af;
+    font-size: 14px;
+}
+.price-value {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.change {
+    margin-top: 5px;
+    font-size: 15px;
+}
+.green {
+    color: #22c55e;
+}
+.red {
+    color: #ef4444;
+}
+.gray {
+    color: #9ca3af;
+}
+.score-box {
+    text-align: center;
+}
+.score {
+    font-size: 48px;
+    font-weight: 800;
+}
+.signal {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.buy {
+    background: rgba(34,197,94,0.18);
+    color: #22c55e;
+}
+.sell {
+    background: rgba(239,68,68,0.18);
+    color: #ef4444;
+}
+.wait {
+    background: rgba(156,163,175,0.18);
+    color: #d1d5db;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid #252d45;
+}
+.row:last-child {
+    border-bottom: none;
+}
+.label {
+    color: #9ca3af;
+}
+.value {
+    font-weight: 600;
+}
+.status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 7px;
+}
+.warning {
+    background: rgba(245,158,11,0.12);
+    color: #fbbf24;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 700;
+    background: #2563eb;
+    color: white;
+}
+button:active {
+    transform: scale(0.98);
+}
+.footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 12px;
+    padding: 15px 0 30px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🤖 AI GOLD</h1>
+        <p>V1.0 · XAUUSD</p>
+    </div>
+    <!-- Price -->
+    <div class="card price">
+        <div class="price-label">
+            XAUUSD 当前价格
+        </div>
+        <div id="price" class="price-value">
+            读取中...
+        </div>
+        <div id="change" class="change gray">
+            等待数据
+        </div>
+    </div>
+    <!-- AI Signal -->
+    <div class="card score-box">
+        <div class="price-label">
+            AI 综合评分
+        </div>
+        <div id="score" class="score">
+            --
+        </div>
+        <div id="signal" class="signal wait">
+            WAIT
+        </div>
+    </div>
+    <!-- Analysis -->
+    <div class="card">
+        <div class="row">
+            <span class="label">M1趋势</span>
+            <span id="m1" class="value">--</span>
+        </div>
+        <div class="row">
+            <span class="label">M5趋势</span>
+            <span id="m5" class="value">--</span>
+        </div>
+        <div class="row">
+            <span class="label">M15趋势</span>
+            <span id="m15" class="value">--</span>
+        </div>
+        <div class="row">
+            <span class="label">H1趋势</span>
+            <span id="h1" class="value">--</span>
+        </div>
+        <div class="row">
+            <span class="label">RSI</span>
+            <span id="rsi" class="value">--</span>
+        </div>
+        <div class="row">
+            <span class="label">MACD</span>
+            <span id="macd" class="value">--</span>
+        </div>
+    </div>
+    <!-- Trading Plan -->
+    <div class="card">
+        <div class="row">
+            <span class="label">建议方向</span>
+            <span id="direction" class="value">
+                WAIT
+            </span>
+        </div>
+        <div class="row">
+            <span class="label">参考进场</span>
+            <span id="entry" class="value">
+                --
+            </span>
+        </div>
+        <div class="row">
+            <span class="label">止损 SL</span>
+            <span id="sl" class="value">
+                --
+            </span>
+        </div>
+        <div class="row">
+            <span class="label">止盈 TP</span>
+            <span id="tp" class="value">
+                --
+            </span>
+        </div>
+        <div class="row">
+            <span class="label">风险比例</span>
+            <span class="value">
+                0.5%
+            </span>
+        </div>
+    </div>
+    <!-- System -->
+    <div class="card">
+        <div class="status">
+            <span>
+                <span class="dot"></span>
+                AI系统
+            </span>
+            <strong class="green">
+                ONLINE
+            </strong>
+        </div>
+        <br>
+        <div class="status">
+            <span>交易模式</span>
+            <strong class="gray">
+                SIMULATION
+            </strong>
+        </div>
+    </div>
+    <!-- Warning -->
+    <div class="card warning">
+        ⚠️ 当前为模拟分析模式。<br><br>
+        本网页不会连接你的 CPT Markets
+        Live 账户，也不会自动下单。
+        <br><br>
+        后续版本才会加入安全的云端
+        MT5 自动交易接口。
+    </div>
+    <button onclick="refreshAI()">
+        🔄 刷新 AI 分析
+    </button>
+    <div class="footer">
+        AI GOLD V1.0 · XAUUSD
+    </div>
+</div>
+<script>
+/*
+========================================
+AI GOLD V1.0
+手机版模拟 AI 引擎
+========================================
+注意：
+目前没有连接真实行情 API。
+这里使用模拟价格，
+用于测试手机网页界面。
+后续接入服务器后，
+再替换为真实 XAUUSD 数据。
+*/
+let basePrice = 3400;
+/*
+随机模拟黄金价格
+*/
+function generatePrice() {
+    let movement =
+        (Math.random() - 0.5) * 6;
+    basePrice += movement;
+    return basePrice.toFixed(2);
+}
+/*
+随机生成 AI 分析
+*/
+function generateAI() {
+    let price =
+        generatePrice();
+    let score =
+        Math.floor(
+            Math.random() * 41
+        ) + 55;
+    let direction;
+    if (score >= 80) {
+        direction =
+            Math.random() > 0.5
+            ? "BUY"
+            : "SELL";
+    } else {
+        direction = "WAIT";
+    }
+    /*
+    趋势
+    */
+    let trends = [
+        "↑ 多",
+        "↓ 空",
+        "→ 震荡"
+    ];
+    document.getElementById("m1")
+        .innerText =
+        trends[Math.floor(
+            Math.random() * trends.length
+        )];
+    document.getElementById("m5")
+        .innerText =
+        trends[Math.floor(
+            Math.random() * trends.length
+        )];
+    document.getElementById("m15")
+        .innerText =
+        trends[Math.floor(
+            Math.random() * trends.length
+        )];
+    document.getElementById("h1")
+        .innerText =
+        trends[Math.floor(
+            Math.random() * trends.length
+        )];
+    /*
+    RSI
+    */
+    let rsi =
+        (40 + Math.random() * 30)
+        .toFixed(1);
+    document.getElementById("rsi")
+        .innerText = rsi;
+    /*
+    MACD
+    */
+    let macd =
+        Math.random() > 0.5
+        ? "金叉 ↑"
+        : "死叉 ↓";
+    document.getElementById("macd")
+        .innerText = macd;
+    /*
+    Price
+    */
+    document.getElementById("price")
+        .innerText = price;
+    document.getElementById("score")
+        .innerText =
+        score + "/100";
+    /*
+    Signal
+    */
+    let signal =
+        document.getElementById("signal");
+    signal.className =
+        "signal";
+    if (direction === "BUY") {
+        signal.innerText =
+            "🟢 BUY";
+        signal.classList.add(
+            "buy"
+        );
+    }
+    else if (direction === "SELL") {
+        signal.innerText =
+            "🔴 SELL";
+        signal.classList.add(
+            "sell"
+        );
+    }
+    else {
+        signal.innerText =
+            "⚪ WAIT";
+        signal.classList.add(
+            "wait"
+        );
+    }
+    document.getElementById(
+        "direction"
+    ).innerText = direction;
+    /*
+    Entry / SL / TP
+    */
+    let p =
+        parseFloat(price);
+    if (direction === "BUY") {
+        let sl =
+            p - 8;
+        let tp =
+            p + 16;
+        document.getElementById(
+            "entry"
+        ).innerText =
+            p.toFixed(2);
+        document.getElementById(
+            "sl"
+        ).innerText =
+            sl.toFixed(2);
+        document.getElementById(
+            "tp"
+        ).innerText =
+            tp.toFixed(2);
+    }
+    else if (direction === "SELL") {
+        let sl =
+            p + 8;
+        let tp =
+            p - 16;
+        document.getElementById(
+            "entry"
+        ).innerText =
+            p.toFixed(2);
+        document.getElementById(
+            "sl"
+        ).innerText =
+            sl.toFixed(2);
+        document.getElementById(
+            "tp"
+        ).innerText =
+            tp.toFixed(2);
+    }
+    else {
+        document.getElementById(
+            "entry"
+        ).innerText = "--";
+        document.getElementById(
+            "sl"
+        ).innerText = "--";
+        document.getElementById(
+            "tp"
+        ).innerText = "--";
+    }
+}
+/*
+刷新
+*/
+function refreshAI() {
+    generateAI();
+}
+/*
+第一次运行
+*/
+refreshAI();
+/*
+每30秒更新一次
+*/
+setInterval(
+    refreshAI,
+    30000
+);
+</script>
+</body>
+</html>
